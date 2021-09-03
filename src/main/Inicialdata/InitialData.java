@@ -24,12 +24,15 @@ public class InitialData {
     private ArrayList<UsuarioModelBL> usuarios = null;
     private UsuarioModelBL usuarioAgregar = null;
      private ArrayList<UsuarioModelBL> usuariobuscar = null;
-     private 
+     private ArrayList<CampaniaAplicada> consultaConsumo = null;
     
     public InitialData(){
         CampaniasAppDAO campaniasAppDAS = new CampaniasAppDAO();
         this.campaniasAplicadas = campaniasAppDAS.obtenerCampaniasApli("");
         //this.campaniasAplicadas.add(0, new CampaniaAplicada(-1, "Todos usuarios", "Descripciones", "Todas fechas", -1, "Alias usuarios"));
+        //GENERAL
+        this.consultaConsumo = campaniasAppDAS.obtenerCampaniasApli("consumo");
+        
         
         CampaniaDAO campaniaDAS= new CampaniaDAO();
         this.campanias = campaniaDAS.obtenerCampania();
@@ -45,6 +48,7 @@ public class InitialData {
        
         LibranzaDAO libranzaDAO = new LibranzaDAO();
         this.libranzas = libranzaDAO.obtenerlLibranza();
+        
         
     }
 
@@ -107,6 +111,14 @@ public class InitialData {
     this.usuariobuscar=usuarioDAS.obtenerUsuarios(usrAlias, numero);
      return  usuariobuscar;
     
+    }
+
+    public ArrayList<CampaniaAplicada> getConsultaConsumo() {
+        return consultaConsumo;
+    }
+
+    public void setConsultaConsumo(ArrayList<CampaniaAplicada> consultaConsumo) {
+        this.consultaConsumo = consultaConsumo;
     }
     
     

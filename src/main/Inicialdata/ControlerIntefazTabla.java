@@ -29,6 +29,7 @@ public class ControlerIntefazTabla {
     private JTable tblResultadoConsumo;
     private JTable tblResultadoAsesor;
     private JTable tblResultadolibraza;
+    private JTable tblResultadoGeneral;
     
     public ControlerIntefazTabla(TabbedPane tabbedPane) {
         this.interfaz = tabbedPane;
@@ -51,7 +52,9 @@ public class ControlerIntefazTabla {
         this.tblResultadoConsumo  =interfaz.tblConsumo;
         this.tblResultadoAsesor=interfaz.tblAsesor;
         this.tblResultadolibraza = interfaz.tblLibranza;
+        this.tblResultadoGeneral = interfaz.tblGeneral;
         InitialData initialData = new InitialData();
+        this.setTblResultadosGeneral(initialData.getConsultaConsumo());
         this.setTblResultadosConsumo(initialData.getConsumos());
         this.setTblResultadosCampanias(initialData.getCampanias());
         this.setTblResultadosCampaniasAplicadas(initialData.getCampaniasAplicadas());
@@ -120,6 +123,16 @@ public class ControlerIntefazTabla {
         this.tblResultadolibraza.setModel(tableModel);
         for (int i = 0; i < libranzas.size(); i++) {
             tableModel.addRow(libranzas.get(i).toArray());
+        }
+    }
+      public void setTblResultadosGeneral(ArrayList<CampaniaAplicada> general) {
+        String[] headers = {"ID", "NOMBRE DE USUARO","DESCRPCION DE CAMPAÑA", "NOMBRE DE ASESOR", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
+        this.tblResultadoGeneral.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoGeneral.setModel(tableModel);
+        for (int i = 0; i < general.size(); i++) {
+            tableModel.addRow(general.get(i).toArrayconsumo());
         }
     }
     

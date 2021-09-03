@@ -50,6 +50,11 @@ public class CampaniaAplicada {
         this.cpaUsuari_ID = cpaUsuari_ID;
     }
 
+     public Object[] toArrayconsumo(){
+        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, nombreAsesor ,cpaAppFecha,cpaUsuari_ID, IdcpaCampania};
+        return data;
+    }
+
     /*
     Constructor para Créditos de Libranza
      */
