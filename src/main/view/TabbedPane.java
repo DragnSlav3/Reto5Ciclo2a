@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package main.view;
+import java.awt.Toolkit;
 import main.accessDAL.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,6 +22,7 @@ public class TabbedPane extends javax.swing.JFrame {
      */
     public TabbedPane() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -971,4 +973,8 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsuarioFecha;
     private javax.swing.JTextField txtUsuarioNombres;
     // End of variables declaration//GEN-END:variables
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/icon.png")));
+    }
 }
