@@ -42,7 +42,7 @@ public class ConnectionDB {
             String port     = (String)jsonObject.get("dp_port");
             String username = (String)jsonObject.get("db_user");
             String password = (String)jsonObject.get("db_pssword");
-            String dbURL = "jdbc:mysql://"+host+":"+port+"/reto5" ;
+            String dbURL = "jdbc:mysql://"+host+":"+port+"/banco_online" ;
             
             conn = DriverManager.getConnection(dbURL, username, password);
             if( conn != null ) 

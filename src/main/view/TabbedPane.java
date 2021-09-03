@@ -81,7 +81,7 @@ public class TabbedPane extends javax.swing.JFrame {
         txtConsumoTasa = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblLibranza = new javax.swing.JTable();
         btnLibranzaAgregar = new javax.swing.JButton();
         btnLibranzaEditar = new javax.swing.JButton();
         btnLibranzaBorrar = new javax.swing.JButton();
@@ -235,9 +235,7 @@ public class TabbedPane extends javax.swing.JFrame {
                             .addComponent(lblCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelCampaniaLayout.createSequentialGroup()
-                                .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCampaniaDescripcion))))
                 .addGap(36, 36, 36))
         );
@@ -455,7 +453,7 @@ public class TabbedPane extends javax.swing.JFrame {
 
         panelLibranza.addTab("Consumo", panelConsumo);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblLibranza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -466,7 +464,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tblLibranza);
 
         btnLibranzaAgregar.setText("Agregar");
         btnLibranzaAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -639,7 +637,6 @@ public class TabbedPane extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(lblUsuarioContrasena)
                                         .addGap(1, 1, 1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtUsuarioCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtUsuarioApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -909,7 +906,6 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable5;
     private javax.swing.JLabel lblAsesorApellidos;
     private javax.swing.JLabel lblAsesorID;
     private javax.swing.JLabel lblAsesorNombres;
@@ -940,14 +936,15 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JPanel panelCampaniaAplicada;
     private javax.swing.JPanel panelConsumo;
     private javax.swing.JPanel panelGeneral;
-    private javax.swing.JTabbedPane panelLibranza;
+    public javax.swing.JTabbedPane panelLibranza;
     private javax.swing.JPanel panelUsuario;
-    private javax.swing.JTable tblAsesor;
-    private javax.swing.JTable tblCampania;
-    private javax.swing.JTable tblCampaniaAplicada;
-    private javax.swing.JTable tblConsumo;
-    private javax.swing.JTable tblGeneral;
-    private javax.swing.JTable tblUsuario;
+    public javax.swing.JTable tblAsesor;
+    public javax.swing.JTable tblCampania;
+    public javax.swing.JTable tblCampaniaAplicada;
+    public javax.swing.JTable tblConsumo;
+    public javax.swing.JTable tblGeneral;
+    public javax.swing.JTable tblLibranza;
+    public javax.swing.JTable tblUsuario;
     private javax.swing.JTextField txtAsesorApellidos;
     private javax.swing.JTextField txtAsesorID;
     private javax.swing.JTextField txtAsesorNombres;
