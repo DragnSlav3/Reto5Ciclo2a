@@ -4,6 +4,7 @@ package main.Inicialdata;
 import java.util.*;
 import main.accessDAL.CampaniaDAO;
 import main.accessDAL.CampaniasAppDAO;
+import main.accessDAL.ConsumoDAO;
 import main.accessDAL.UsuarioDAO;
 import main.modelBL.*;
 
@@ -32,6 +33,9 @@ public class InitialData {
         
         UsuarioDAO usuarioDAS = new UsuarioDAO();
         this.usuarios = usuarioDAS.obteneUsuarios();
+        
+        ConsumoDAO consumoDAO = new ConsumoDAO();
+        this.consumos = consumoDAO.obtenerConsumos();
         
        
         

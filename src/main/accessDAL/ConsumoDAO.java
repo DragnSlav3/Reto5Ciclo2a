@@ -32,7 +32,7 @@ public class ConsumoDAO {
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
             while (resultado.next()) {
-                Consumo consumocre = new Consumo(resultado.getInt(1), resultado.getInt(2), resultado.getInt(4), resultado.getFloat(5), resultado.getInt(7), resultado.getString(2), resultado.getString(3));
+                Consumo consumocre = new Consumo(resultado.getInt(1), resultado.getInt(6), resultado.getInt(4), resultado.getFloat(5), resultado.getInt(7), resultado.getString(2), resultado.getString(3));
                 creditoconsumo.add(consumocre);
             }
 
