@@ -31,7 +31,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" max="32767" attributes="0"/>
-          <Component id="panelLibranza" alignment="0" pref="650" max="32767" attributes="0"/>
+          <Component id="panelLibranza" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -799,12 +799,19 @@
                                       <Component id="txtUsuarioContrasena" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblUsuarioEmail" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="lblUsuarioNombres" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                                          <Component id="lblUsuarioAlias" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblUsuarioEmail" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                                  <Component id="lblUsuarioAlias" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblUsuarioNombres" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="txtUsuarioAlias" min="-2" pref="60" max="-2" attributes="0"/>
