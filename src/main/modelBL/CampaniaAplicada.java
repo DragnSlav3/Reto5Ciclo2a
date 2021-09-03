@@ -67,7 +67,10 @@ public class CampaniaAplicada {
         this.IdcpaCampania = IdcpaCampania;
         this.cpaUsuari_ID = cpaUsuari_ID;
     }
-
+ public Object[] toArraylibranza(){
+        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, NombreEmpresa ,cpaAppFecha,cpaUsuari_ID, IdcpaCampania};
+        return data;
+    }
     /**
      * @return the cpaAppId
      */
