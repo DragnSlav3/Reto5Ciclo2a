@@ -61,7 +61,7 @@ public class LibranzaDAO {
         }
         return libranzacredi;
     }
-
+/*
     public void AgregarLibranza(Libranza AgregarLibranza) {
         try {
             if (conn == null) {
@@ -85,7 +85,7 @@ public class LibranzaDAO {
         } catch (SQLException ex) {
 
         }
-    }
+    }*/
 
     public void ActualizarConsumo(Consumo Actualizarconsumo) {
         try {
