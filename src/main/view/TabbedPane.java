@@ -38,8 +38,10 @@ public class TabbedPane extends javax.swing.JFrame {
         panelLibranza = new javax.swing.JTabbedPane();
         panelGeneral = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblGeneral = new javax.swing.JTable();
+        tblGeneral1 = new javax.swing.JTable();
         btnGeneralActualizar = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblGeneral2 = new javax.swing.JTable();
         panelCampania = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCampania = new javax.swing.JTable();
@@ -149,7 +151,7 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGap(0, 54, Short.MAX_VALUE)
         );
 
-        tblGeneral.setModel(new javax.swing.table.DefaultTableModel(
+        tblGeneral1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -160,25 +162,41 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblGeneral);
+        jScrollPane1.setViewportView(tblGeneral1);
 
         btnGeneralActualizar.setText("Actualizar");
+
+        tblGeneral2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(tblGeneral2);
 
         javax.swing.GroupLayout panelGeneralLayout = new javax.swing.GroupLayout(panelGeneral);
         panelGeneral.setLayout(panelGeneralLayout);
         panelGeneralLayout.setHorizontalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeneralLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnGeneralActualizar)
                 .addGap(253, 253, 253))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+            .addComponent(jScrollPane8)
         );
         panelGeneralLayout.setVerticalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGeneralLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGeneralActualizar)
                 .addContainerGap())
         );
@@ -229,7 +247,7 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(btnCampaniaEditar)
                         .addGap(86, 86, 86)
                         .addComponent(btnCampaniaBorrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                         .addComponent(btnCampaniaCancelar))
                     .addGroup(panelCampaniaLayout.createSequentialGroup()
                         .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +277,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaDescripcion)
                     .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 88, Short.MAX_VALUE))
+                .addGap(0, 123, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña", panelCampania);
@@ -349,7 +367,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaAplicadaFecha)
                     .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(0, 37, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña aplicada", panelCampaniaAplicada);
@@ -403,7 +421,7 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(btnConsumoEditar)
                         .addGap(80, 80, 80)
                         .addComponent(btnConsumoBorrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                         .addComponent(btnConsumoCancelar)
                         .addGap(34, 34, 34))
                     .addGroup(panelConsumoLayout.createSequentialGroup()
@@ -444,7 +462,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(lblConsumoCuotas)
                     .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoAsesor)
                     .addComponent(lblConsumoTasa)
@@ -503,7 +521,7 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(btnLibranzaEditar)
                         .addGap(76, 76, 76)
                         .addComponent(btnLibranzaBorrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                         .addComponent(btnLibranzaCancelar)
                         .addGap(51, 51, 51))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -542,7 +560,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaPlazo)
                     .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaEmpresa)
                     .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -651,7 +669,7 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(btnUsuarioBorrar)
                         .addGap(49, 49, 49)
                         .addComponent(Cancelar)
-                        .addContainerGap(129, Short.MAX_VALUE))))
+                        .addContainerGap(179, Short.MAX_VALUE))))
         );
         panelUsuarioLayout.setVerticalGroup(
             panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,7 +691,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtUsuarioNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioApellidos)
                     .addComponent(txtUsuarioApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuarioCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioCelular)
@@ -753,7 +771,7 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(lblAsesorApellidos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAsesorApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         panelAsesorLayout.setVerticalGroup(
             panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -775,7 +793,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(lblAsesorApellidos)
                     .addComponent(txtAsesorNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAsesorApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAsesorSucursal)
                     .addComponent(txtAsesorSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -789,7 +807,7 @@ public class TabbedPane extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelLibranza)
+            .addComponent(panelLibranza, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -908,6 +926,7 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel lblAsesorApellidos;
     private javax.swing.JLabel lblAsesorID;
     private javax.swing.JLabel lblAsesorNombres;
@@ -944,7 +963,8 @@ public class TabbedPane extends javax.swing.JFrame {
     public javax.swing.JTable tblCampania;
     public javax.swing.JTable tblCampaniaAplicada;
     public javax.swing.JTable tblConsumo;
-    public javax.swing.JTable tblGeneral;
+    public javax.swing.JTable tblGeneral1;
+    public javax.swing.JTable tblGeneral2;
     public javax.swing.JTable tblLibranza;
     public javax.swing.JTable tblUsuario;
     private javax.swing.JTextField txtAsesorApellidos;

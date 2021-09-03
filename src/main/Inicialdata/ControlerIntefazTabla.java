@@ -52,7 +52,7 @@ public class ControlerIntefazTabla {
         this.tblResultadoConsumo  =interfaz.tblConsumo;
         this.tblResultadoAsesor=interfaz.tblAsesor;
         this.tblResultadolibraza = interfaz.tblLibranza;
-        this.tblResultadoGeneral = interfaz.tblGeneral;
+        this.tblResultadoGeneral = interfaz.tblGeneral1;
         InitialData initialData = new InitialData();
         this.setTblResultadosGeneral(initialData.getConsultaConsumo());
         this.setTblResultadosConsumo(initialData.getConsumos());
