@@ -71,7 +71,7 @@ public class CampaniasAppDAO {
 "                        cpa_campania, cpa_usuario\n" +
 "                        from campania_aplicada\n" +
 "                        join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n" +
-"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id;\n" +
+"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id ;\n" +
 "                        ";
                 Statement statdatosconsul = conn.createStatement();
                 ResultSet resultado = statdatosconsul.executeQuery(sql);
