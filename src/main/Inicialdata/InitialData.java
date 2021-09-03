@@ -2,6 +2,7 @@ package main.Inicialdata;
 
 
 import java.util.*;
+import main.accessDAL.AsesorComercialDAO;
 import main.accessDAL.CampaniaDAO;
 import main.accessDAL.CampaniasAppDAO;
 import main.accessDAL.ConsumoDAO;
@@ -37,6 +38,8 @@ public class InitialData {
         ConsumoDAO consumoDAO = new ConsumoDAO();
         this.consumos = consumoDAO.obtenerConsumos();
         
+        AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
+        this.asesores= asesorComercialDAO.obteneAsesorComercial();
        
         
     }

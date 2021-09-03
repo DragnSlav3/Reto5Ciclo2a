@@ -49,11 +49,13 @@ public class ControlerIntefazTabla {
         this.tblResultadoscampania = interfaz.tblCampania;
         this.tblResultadoscampaniasAplicadas = interfaz.tblCampaniaAplicada;
         this.tblResultadoConsumo  =interfaz.tblConsumo;
+        this.tblResultadoAsesor=interfaz.tblAsesor;
         InitialData initialData = new InitialData();
         this.setTblResultadosConsumo(initialData.getConsumos());
         this.setTblResultadosCampanias(initialData.getCampanias());
         this.setTblResultadosCampaniasAplicadas(initialData.getCampaniasAplicadas());
         this.setTblResultadosUsuario(initialData.getUsuarios());
+        this.setTblResultadosAsesor(initialData.getAsesores());
         
     }
     
@@ -100,13 +102,13 @@ public class ControlerIntefazTabla {
         }
     }
      public void setTblResultadosAsesor(ArrayList<AsesorComercial> asesorComercials) {
-        String[] headers = {"ID","DESCRIPCION DE CAMPAÑA","CUOTAS","TASA DE INTERES", "NOMBRE DEL ASESOR"};
-        this.tblResultaa.removeAll();
+        String[] headers = {"ID", "NOMBRE", "APELLIDO", "SURCUSAL BANCARIA"};
+        this.tblResultadoAsesor.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoConsumo.setModel(tableModel);
-        for (int i = 0; i < .size(); i++) {
-            tableModel.addRow(consumos.get(i).toArray());
+        this.tblResultadoAsesor.setModel(tableModel);
+        for (int i = 0; i < asesorComercials.size(); i++) {
+            tableModel.addRow(asesorComercials.get(i).toArray());
         }
     }
     
