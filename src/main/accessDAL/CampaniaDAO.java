@@ -33,6 +33,7 @@ public class CampaniaDAO {
             String sql = "select cmp_id, cmp_descripcion from campania;";
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
+            System.out.println("HOLA");
             while (resultado.next()) {
                 Campania camApp = new Campania(resultado.getInt(1), resultado.getString(2));
                 campania.add(camApp);
@@ -43,7 +44,7 @@ public class CampaniaDAO {
 
     }
 
-    public Campania obtenerCampania(int cmpId) {
+    public Campania obtenerCampaniaID(int cmpId) {
         Campania campania = null;
 
         try {
@@ -63,7 +64,7 @@ public class CampaniaDAO {
     }
 //para generar una lista si es de consumo o de limbransa
 
-    public ArrayList<Campania> obtenerCampania(String cmpDescrpcion) {
+    public ArrayList<Campania> obtenerCampaniaDES(String cmpDescrpcion) {
         ArrayList<Campania> campania = new ArrayList<Campania>();
 
         try {
@@ -99,7 +100,7 @@ public class CampaniaDAO {
     }
 
     //para generar una lista si es de consumo o de limbransa con el nombre del asesor o de la empresa
-    public ArrayList<Campania> obtenerCampania(String cmpDescrpcion, int tipo) {
+    public ArrayList<Campania> obtenerCampaniaAS(String cmpDescrpcion, int tipo) {
         ArrayList<Campania> campania = new ArrayList<Campania>();
 
         try {

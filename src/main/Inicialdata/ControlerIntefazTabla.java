@@ -47,9 +47,12 @@ public class ControlerIntefazTabla  {
         interfaz.setLocationRelativeTo(null);
 
      this.tblResultadosUsuaros = interfaz.tblUsuario;
+     this.tblResultadoscampania = interfaz.tblCampania;
         InitialData initialData = new InitialData();
+           this.setTblResultadosCampanias(initialData.getCampanias());
         
         this.setTblResultadosUsuario(initialData.getUsuarios()); 
+     
 
     }
   
@@ -65,14 +68,14 @@ public class ControlerIntefazTabla  {
             tableModel.addRow(usuarioModelBLs.get(i).toArray());
         }
     }
-       public void setTblResultadosCampanias(ArrayList<UsuarioModelBL> usuarioModelBLs) {
-        String[] headers = {"Alias", "Nombre", "Apellido", "Email", "Celular", "Clave", "Fecha de nacimiento"};
-        this.tblResultadosUsuaros.removeAll();
+       public void setTblResultadosCampanias(ArrayList<Campania> campanias) {
+        String[] headers = {"ID", "DESCRIPCION"};
+        this.tblResultadoscampania.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
-        this.tblResultadosUsuaros.setModel(tableModel);
-        for (int i = 0; i < usuarioModelBLs.size(); i++) {
-            tableModel.addRow(usuarioModelBLs.get(i).toArray());
+        this.tblResultadoscampania.setModel(tableModel);
+        for (int i = 0; i < campanias.size(); i++) {
+            tableModel.addRow(campanias.get(i).toArray());
         }
     }  public void setTblResultadosCampaniasAplicadas(ArrayList<UsuarioModelBL> usuarioModelBLs) {
         String[] headers = {"Alias", "Nombre", "Apellido", "Email", "Celular", "Clave", "Fecha de nacimiento"};
