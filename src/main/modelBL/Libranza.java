@@ -69,7 +69,7 @@ public class Libranza {
     }
 
     public Object[] toArray() {
-        Object[] data = {lbrIdPRIMARY,LbrIdCamapania, LbrEmpresa, LbrMesesPlazo, LbrTasaInteres};
+        Object[] data = {lbrIdPRIMARY,lbrCamapDescripcion, LbrEmpresa, LbrMesesPlazo, LbrTasaInteres};
         return data;
     }
 
