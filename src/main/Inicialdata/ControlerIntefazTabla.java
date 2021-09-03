@@ -50,13 +50,14 @@ public class ControlerIntefazTabla {
         this.tblResultadoscampaniasAplicadas = interfaz.tblCampaniaAplicada;
         this.tblResultadoConsumo  =interfaz.tblConsumo;
         this.tblResultadoAsesor=interfaz.tblAsesor;
+        this.tblResultadolibraza = interfaz.tblLibranza;
         InitialData initialData = new InitialData();
         this.setTblResultadosConsumo(initialData.getConsumos());
         this.setTblResultadosCampanias(initialData.getCampanias());
         this.setTblResultadosCampaniasAplicadas(initialData.getCampaniasAplicadas());
         this.setTblResultadosUsuario(initialData.getUsuarios());
         this.setTblResultadosAsesor(initialData.getAsesores());
-        
+        this.setTblResultadoslibranza(initialData.getLibranzas());
     }
     
     public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
@@ -109,6 +110,16 @@ public class ControlerIntefazTabla {
         this.tblResultadoAsesor.setModel(tableModel);
         for (int i = 0; i < asesorComercials.size(); i++) {
             tableModel.addRow(asesorComercials.get(i).toArray());
+        }
+    }
+      public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
+        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES"};
+        this.tblResultadolibraza.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadolibraza.setModel(tableModel);
+        for (int i = 0; i < libranzas.size(); i++) {
+            tableModel.addRow(libranzas.get(i).toArray());
         }
     }
     

@@ -6,6 +6,7 @@ import main.accessDAL.AsesorComercialDAO;
 import main.accessDAL.CampaniaDAO;
 import main.accessDAL.CampaniasAppDAO;
 import main.accessDAL.ConsumoDAO;
+import main.accessDAL.LibranzaDAO;
 import main.accessDAL.UsuarioDAO;
 import main.modelBL.*;
 
@@ -23,6 +24,7 @@ public class InitialData {
     private ArrayList<UsuarioModelBL> usuarios = null;
     private UsuarioModelBL usuarioAgregar = null;
      private ArrayList<UsuarioModelBL> usuariobuscar = null;
+     private 
     
     public InitialData(){
         CampaniasAppDAO campaniasAppDAS = new CampaniasAppDAO();
@@ -41,6 +43,8 @@ public class InitialData {
         AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
         this.asesores= asesorComercialDAO.obteneAsesorComercial();
        
+        LibranzaDAO libranzaDAO = new LibranzaDAO();
+        this.libranzas = libranzaDAO.obtenerlLibranza();
         
     }
 
