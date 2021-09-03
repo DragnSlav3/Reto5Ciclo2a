@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package main.view;
-
+import main.accessDAL.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import utils.ConnectionDB;
@@ -14,6 +14,7 @@ import utils.ConnectionDB;
  * @author Germán y Lady
  */
 public class TabbedPane extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form TabbedPane
@@ -820,9 +821,14 @@ public class TabbedPane extends javax.swing.JFrame {
 
     private void btnUsuarioAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioAgregarActionPerformed
         // TODO add your handling code here:
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.AgregarGerman("insert into usuario values ('dragnslav3', 'german', 'garcia', 'dragnslav3@gmail.com', '3008281940', 'admin', '21/09/1981');");
         
         
+        /*
         Connection conn=ConnectionDB.getConnection();
+        
+        
         
         try {
             PreparedStatement prepared = conn.prepareStatement("insert into usuario values ('dragnslav3', 'german', 'garcia', 'dragnslav3@gmail.com', '3008281940', 'admin', '21/09/1981');");
@@ -830,7 +836,7 @@ public class TabbedPane extends javax.swing.JFrame {
             System.out.println("Usuario Agregado");
         } catch (Exception e) {
             System.out.println(e);
-        }
+        }*/
     }//GEN-LAST:event_btnUsuarioAgregarActionPerformed
 
     /**

@@ -156,10 +156,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtCampaniaID" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtCampaniaID" min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="txtCampaniaDescripcion" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -788,7 +785,6 @@
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="txtUsuarioCelular" min="-2" pref="118" max="-2" attributes="0"/>
                                           <Component id="txtUsuarioApellidos" min="-2" pref="175" max="-2" attributes="0"/>

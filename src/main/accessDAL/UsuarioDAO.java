@@ -179,9 +179,12 @@ public class UsuarioDAO {
     }
     
     public void AgregarGerman(String strAgregar){
-        try {
+        try { 
+            if (conn == null) {
+                conn = ConnectionDB.getConnection();
+            }
             PreparedStatement prstmnt = conn.prepareStatement(strAgregar);
-            prstmnt.execute();
+           int re = prstmnt.executeUpdate();
             System.out.println("Usuario Agregado");
         } catch (Exception e) {
             System.out.println(e);
