@@ -24,7 +24,7 @@ public class CampaniasAppDAO {
 
     public ArrayList<CampaniaAplicada> obtenerCampaniasApli(String tipoconsulta) {
         ArrayList<CampaniaAplicada> campaniaAplicada = new ArrayList<CampaniaAplicada>();
-
+        System.err.println("hola Camapñas");
         try {
 
             if (conn == null) {
@@ -66,11 +66,13 @@ public class CampaniasAppDAO {
                 }
 
             } else {
-                sql = "select cpa_app_id as \"Crédito No.\", concat(usuario.usr_nombres, concat(\" \", usuario.usr_apellidos)) as \"Nombre Cliente\" , cmp_descripcion as \"Descripción Crédito\", campania_aplicada.cpa_app_fecha as \"Fecha de Aplicacion a campaña\",\n"
-                        + "cpa_campania as \"ID De la campaña\", cpa_usuario as \"ID Del usuario\"\n"
-                        + "from campania_aplicada\n"
-                        + "join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n"
-                        + "join  campania on campania_aplicada.cpa_campania = campania.cmp_id;";
+                System.out.println("holacmpania2");
+                sql = "select cpa_app_id , concat(usuario.usr_nombres, concat(\" \", usuario.usr_apellidos)), cmp_descripcion , campania_aplicada.cpa_app_fecha ,\n" +
+"                        cpa_campania, cpa_usuario\n" +
+"                        from campania_aplicada\n" +
+"                        join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n" +
+"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id;\n" +
+"                        ";
                 Statement statdatosconsul = conn.createStatement();
                 ResultSet resultado = statdatosconsul.executeQuery(sql);
                 while (resultado.next()) {
