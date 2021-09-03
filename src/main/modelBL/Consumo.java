@@ -5,18 +5,18 @@ package main.modelBL;
  * @author Germán García
  */
 public class Consumo {
-    private  int CsmIdPrimary;
+
+    private int CsmIdPrimary;
     private int CsmId;
     private int CsmCuotas;
-    private float CsmTasaInteres;    
+    private float CsmTasaInteres;
     private int CsmAsesor;
-    
-    //opconales
-     private  String CmpDescripcion;
-     private  String AsrNombre;
-     
-     //contructor basico
 
+    //opconales
+    private String CmpDescripcion;
+    private String AsrNombre;
+
+    //contructor basico
     public Consumo(int CsmIdPrimary, int CsmId, int CsmCuotas, float CsmTasaInteres, int CsmAsesor) {
         this.CsmIdPrimary = CsmIdPrimary;
         this.CsmId = CsmId;
@@ -24,9 +24,8 @@ public class Consumo {
         this.CsmTasaInteres = CsmTasaInteres;
         this.CsmAsesor = CsmAsesor;
     }
-     
-    //contrutor Armado que trae datos de la tabla usuario y campaña
 
+    //contrutor Armado que trae datos de la tabla usuario y campaña
     public Consumo(int CsmIdPrimary, int CsmId, int CsmCuotas, float CsmTasaInteres, int CsmAsesor, String CmpDescripcion, String AsrNombre) {
         this.CsmIdPrimary = CsmIdPrimary;
         this.CsmId = CsmId;
@@ -37,7 +36,6 @@ public class Consumo {
         this.AsrNombre = AsrNombre;
     }
 
-    
     public int getCsmIdPrimary() {
         return CsmIdPrimary;
     }
@@ -77,9 +75,10 @@ public class Consumo {
     public void setCsmAsesor(int CsmAsesor) {
         this.CsmAsesor = CsmAsesor;
     }
-    
-    
-             
 
-  
+    public Object[] toArray() {
+        Object[] data = {CsmId, CmpDescripcion, CsmCuotas, CsmTasaInteres, AsrNombre};
+        return data;
+    }
+
 }

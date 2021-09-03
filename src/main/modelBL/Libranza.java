@@ -5,11 +5,12 @@ package main.modelBL;
  * @author Germán García
  */
 public class Libranza {
-    private  int lbrIdPRIMARY;
+
+    private int lbrIdPRIMARY;
     private int LbrIdCamapania;
-    
+
     private String lbrCamapDescripcion;
-    
+
     private String LbrEmpresa;
     private int LbrMesesPlazo;
     private float LbrTasaInteres;
@@ -67,9 +68,9 @@ public class Libranza {
         this.LbrTasaInteres = LbrTasaInteres;
     }
 
-
-
-
-    
+    public Object[] toArray() {
+        Object[] data = {LbrIdCamapania, LbrEmpresa, LbrMesesPlazo, LbrTasaInteres};
+        return data;
+    }
 
 }

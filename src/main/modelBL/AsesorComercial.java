@@ -50,6 +50,9 @@ public class AsesorComercial {
         this.AsrApellidos = AsrApellidos;
     }
     
-    
+    public Object[] toArray(){
+        Object[] data = {AsrId, AsrNombres, AsrApellidos, AsrSucursalBancaria};
+        return data;
+    }
 
 }
