@@ -102,4 +102,8 @@ public class UsuarioModelBL {
     public void setUsrFechaNto(String usrFechaNto) {
         this.usrFechaNto = usrFechaNto;
     }   
+      public Object[] toArray(){
+        Object[] data = {usrAlias, usrNombres, usrApellidos, usrEmail, usrCelular, usrClave, usrFechaNto};
+        return data;
+    }
 }

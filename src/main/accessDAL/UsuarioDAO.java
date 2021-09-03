@@ -68,15 +68,24 @@ public class UsuarioDAO {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
+            System.out.println(tipNoA);
 
             if (tipNoA == 1) {
                 //busqueda por nombre
+                System.out.println("hola m");
                 String sql = "select usr_alias AS \"ALIAS\", usr_nombres AS \"NOMBRES\", usr_apellidos AS \"APELLIDOS\", usr_email AS \"CORREO ELECTRONICO\", usr_celular AS \"CELULAR\", usr_clave AS \"CLAVE\", usr_fecha_nto AS \"FECHA DE NACIMIENTO\" from usuario\n"
-                        + "where usuario.usr_nombres like \"%?%\"\n"
+                        + "where usuario.usr_nombres like \"%" + consulta + "%\"\n"
                         + ";";
+
                 PreparedStatement consultadatos = conn.prepareStatement(sql);
-                consultadatos.setString(0, consulta);
+                /*
+                System.out.println(consultadatos + "hola datos");
+                System.out.println(consulta +" tipo"); 
+                
+                consultadatos.setString(1, "b");
+                 */
                 ResultSet resultado = consultadatos.executeQuery();
+                System.out.println(resultado);
                 while (resultado.next()) {
                     UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
                     usuarios.add(usuario);
@@ -85,10 +94,10 @@ public class UsuarioDAO {
             } else {
                 //busqueda por apelldo
                 String sql = "select usr_alias AS \"ALIAS\", usr_nombres AS \"NOMBRES\", usr_apellidos AS \"APELLIDOS\", usr_email AS \"CORREO ELECTRONICO\", usr_celular AS \"CELULAR\", usr_clave AS \"CLAVE\", usr_fecha_nto AS \"FECHA DE NACIMIENTO\" from usuario\n"
-                        + "where usuario.usr_apellidos like \"%?%\"\n"
+                        + "where usuario.usr_apellidos like \"%" + consulta + "%\"\n"
                         + ";";
                 PreparedStatement consultadatos = conn.prepareStatement(sql);
-                consultadatos.setString(0, consulta);
+                //  consultadatos.setString(0, consulta);
                 ResultSet resultado = consultadatos.executeQuery();
                 while (resultado.next()) {
                     UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
@@ -177,14 +186,14 @@ public class UsuarioDAO {
         }
 
     }
-    
-    public void AgregarGerman(String strAgregar){
-        try { 
+
+    public void AgregarGerman(String strAgregar) {
+        try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
             PreparedStatement prstmnt = conn.prepareStatement(strAgregar);
-           int re = prstmnt.executeUpdate();
+            int re = prstmnt.executeUpdate();
             System.out.println("Usuario Agregado");
         } catch (Exception e) {
             System.out.println(e);
