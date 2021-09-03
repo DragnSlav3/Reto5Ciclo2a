@@ -10,7 +10,7 @@ public class UsuarioModelBL {
     private String usrNombres;
     private String usrApellidos;
     private String usrEmail;
-    private double usrCelular;
+    private String usrCelular;
     private String usrClave;
     private String usrFechaNto;
 
@@ -28,7 +28,7 @@ public class UsuarioModelBL {
     Constructor completo
     */
 
-    public UsuarioModelBL(String usrAlias, String usrNombres, String usrApellidos, String usrEmail, double usrCelular, String usrClave, String usrFechaNto) {
+    public UsuarioModelBL(String usrAlias, String usrNombres, String usrApellidos, String usrEmail, String usrCelular, String usrClave, String usrFechaNto) {
         this.usrAlias = usrAlias;
         this.usrNombres = usrNombres;
         this.usrApellidos = usrApellidos;
@@ -77,11 +77,11 @@ public class UsuarioModelBL {
         this.usrEmail = usrEmail;
     }
 
-    public double getUsrCelular() {
+    public String getUsrCelular() {
         return usrCelular;
     }
 
-    public void setUsrCelular(double usrCelular) {
+    public void setUsrCelular(String usrCelular) {
         this.usrCelular = usrCelular;
     }
 

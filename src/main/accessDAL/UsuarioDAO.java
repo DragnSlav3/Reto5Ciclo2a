@@ -33,7 +33,7 @@ public class UsuarioDAO {
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
             while (resultado.next()) {
-                UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
+                UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                 usuarios.add(usuario);
             }
 
@@ -54,7 +54,7 @@ public class UsuarioDAO {
             PreparedStatement consultadatos = conn.prepareStatement(sql);
             consultadatos.setString(0, usrAlias);
             ResultSet resultado = consultadatos.executeQuery();
-            usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
+            usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
 
         } catch (SQLException ex) {
         }
@@ -87,7 +87,7 @@ public class UsuarioDAO {
                 ResultSet resultado = consultadatos.executeQuery();
                 System.out.println(resultado);
                 while (resultado.next()) {
-                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
+                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                     usuarios.add(usuario);
                 }
 
@@ -100,7 +100,7 @@ public class UsuarioDAO {
                 //  consultadatos.setString(0, consulta);
                 ResultSet resultado = consultadatos.executeQuery();
                 while (resultado.next()) {
-                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getDouble(5), resultado.getString(6), resultado.getString(7));
+                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                     usuarios.add(usuario);
                 }
             }
@@ -121,7 +121,7 @@ public class UsuarioDAO {
             stadatos.setString(1, usuarioAgregar.getUsrNombres());
             stadatos.setString(2, usuarioAgregar.getUsrApellidos());
             stadatos.setString(3, usuarioAgregar.getUsrEmail());
-            stadatos.setDouble(4, usuarioAgregar.getUsrCelular());
+            stadatos.setString(4, usuarioAgregar.getUsrCelular());
             stadatos.setString(5, usuarioAgregar.getUsrClave());
             stadatos.setString(6, usuarioAgregar.getUsrFechaNto());
 
@@ -148,7 +148,7 @@ public class UsuarioDAO {
             stadatosActualiza.setString(1, usuarioActualizar.getUsrNombres());
             stadatosActualiza.setString(2, usuarioActualizar.getUsrApellidos());
             stadatosActualiza.setString(3, usuarioActualizar.getUsrEmail());
-            stadatosActualiza.setDouble(4, usuarioActualizar.getUsrCelular());
+            stadatosActualiza.setString(4, usuarioActualizar.getUsrCelular());
             stadatosActualiza.setString(5, usuarioActualizar.getUsrClave());
             stadatosActualiza.setString(6, usuarioActualizar.getUsrFechaNto());
             stadatosActualiza.setString(7, usuarioActualizar.getUsrAlias());
