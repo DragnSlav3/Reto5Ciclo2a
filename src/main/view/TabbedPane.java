@@ -46,6 +46,7 @@ public class TabbedPane extends javax.swing.JFrame {
     public TabbedPane() {
         initComponents();
         setIcon();
+        iniciarVista();
     }
 
     /**
@@ -971,6 +972,7 @@ public class TabbedPane extends javax.swing.JFrame {
             JTable receptor = (JTable) evt.getSource();
             txtCampaniaID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             txtCampaniaDescripcion.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
+            btnCampaniaBorrar.setEnabled(true);
 
         }
 
@@ -1056,6 +1058,9 @@ public class TabbedPane extends javax.swing.JFrame {
         CampaniaDAO campaniaDAO = new CampaniaDAO();
         campaniaDAO.EliminarCampania(idcampania);
         iniciarVista();
+        txtCampaniaID.setText("");
+        txtCampaniaDescripcion.setText("");
+        
         
        
     }//GEN-LAST:event_btnCampaniaBorrarActionPerformed
@@ -1235,6 +1240,10 @@ public class TabbedPane extends javax.swing.JFrame {
         this.setTblResultadosUsuario(initialData.getUsuarios());
         this.setTblResultadosAsesor(initialData.getAsesores());
         this.setTblResultadoslibranza(initialData.getLibranzas());
+        
+        btnCampaniaBorrar.setEnabled(false);
+        
+        
     }
 
     public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
