@@ -185,16 +185,15 @@ public class CampaniaDAO {
 
     }
      
-     public void EliminarCampania(Campania Campaniaeliminar) {
+     public void EliminarCampania(int Campaniaeliminar) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            
-            
-           String sql = "DELETE FROM campania WHERE campania.cmp_id = ?;";
+            System.out.println("eliminando");
+            String sql = "DELETE FROM campania WHERE campania.cmp_id = "+ Campaniaeliminar+";";
            PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-           stadatosActualiza.setInt(0,Campaniaeliminar.getCmpId());
+          
          
            int resulconsul = stadatosActualiza.executeUpdate();
            if (resulconsul > 0) {

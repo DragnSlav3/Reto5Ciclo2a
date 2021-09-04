@@ -9,7 +9,18 @@ import java.awt.Toolkit;
 import main.accessDAL.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+import main.Inicialdata.ControlerIntefazTabla;
+import main.Inicialdata.InitialData;
+import main.modelBL.AsesorComercial;
+import main.modelBL.Campania;
+import main.modelBL.CampaniaAplicada;
+import main.modelBL.Consumo;
+import main.modelBL.Libranza;
+import main.modelBL.UsuarioModelBL;
 import utils.ConnectionDB;
 
 /**
@@ -17,6 +28,17 @@ import utils.ConnectionDB;
  * @author Germán y Lady
  */
 public class TabbedPane extends javax.swing.JFrame {
+    
+    
+    private InitialData inicialdata = null;
+    private JTable tblResultadosUsuaros;
+    private JTable tblResultadoscampania;
+    private JTable tblResultadoscampaniasAplicadas;
+    private JTable tblResultadoConsumo;
+    private JTable tblResultadoAsesor;
+    private JTable tblResultadolibraza;
+    private JTable tblResultadoGeneral;
+    private JTable tblResultadoGeneral2;
 
     /**
      * Creates new form TabbedPane
@@ -232,6 +254,16 @@ public class TabbedPane extends javax.swing.JFrame {
         btnCampaniaEditar.setText("Editar");
 
         btnCampaniaBorrar.setText("Borrar");
+        btnCampaniaBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCampaniaBorrarMouseClicked(evt);
+            }
+        });
+        btnCampaniaBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampaniaBorrarActionPerformed(evt);
+            }
+        });
 
         btnCampaniaCancelar.setText("Cancelar");
 
@@ -767,6 +799,11 @@ public class TabbedPane extends javax.swing.JFrame {
         btnAsesorEditar.setText("Editar");
 
         btnAsesorBorrar.setText("Borrar");
+        btnAsesorBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAsesorBorrarMouseClicked(evt);
+            }
+        });
 
         btnAsesorCancelar.setText("Cancelar");
 
@@ -972,6 +1009,25 @@ public class TabbedPane extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblAsesorMouseClicked
 
+    private void btnAsesorBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsesorBorrarMouseClicked
+       
+        
+    }//GEN-LAST:event_btnAsesorBorrarMouseClicked
+
+    private void btnCampaniaBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCampaniaBorrarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCampaniaBorrarMouseClicked
+
+    
+    private void btnCampaniaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaBorrarActionPerformed
+        int idcampania = Integer.parseInt(txtCampaniaID.getText());
+        CampaniaDAO campaniaDAO = new CampaniaDAO();
+        campaniaDAO.EliminarCampania(idcampania);
+        iniciarVista();
+        
+       
+    }//GEN-LAST:event_btnCampaniaBorrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1113,4 +1169,124 @@ public class TabbedPane extends javax.swing.JFrame {
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/icon.png")));
     }
+    
+    public void iniciarVista() {
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
+
+        this.tblResultadosUsuaros = tblUsuario;
+        this.tblResultadoscampania = tblCampania;
+        this.tblResultadoscampaniasAplicadas = tblCampaniaAplicada;
+        this.tblResultadoConsumo = tblConsumo;
+        this.tblResultadoAsesor = tblAsesor;
+        this.tblResultadolibraza = tblLibranza;
+        this.tblResultadoGeneral = tblGeneral1;
+        this.tblResultadoGeneral2 = tblGeneral2;
+        
+        InitialData initialData = new InitialData();
+        
+        this.setTblResultadosGeneral2(initialData.getConsultaLibranza());
+        this.setTblResultadosGeneral(initialData.getConsultaConsumo());
+        this.setTblResultadosConsumo(initialData.getConsumos());
+        this.setTblResultadosCampanias(initialData.getCampanias());
+        this.setTblResultadosCampaniasAplicadas(initialData.getCampaniasAplicadas());
+        this.setTblResultadosUsuario(initialData.getUsuarios());
+        this.setTblResultadosAsesor(initialData.getAsesores());
+        this.setTblResultadoslibranza(initialData.getLibranzas());
+    }
+
+    public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
+        String[] headers = {"Alias", "Nombre", "Apellido", "Email", "Celular", "Clave", "Fecha de nacimiento"};
+        this.tblResultadosUsuaros.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadosUsuaros.setModel(tableModel);
+        for (int i = 0; i < usuarioModelBLs.size(); i++) {
+            tableModel.addRow(usuarioModelBLs.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadosCampanias(ArrayList<Campania> campanias) {
+        String[] headers = {"ID", "DESCRIPCION"};
+        this.tblResultadoscampania.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoscampania.setModel(tableModel);
+        for (int i = 0; i < campanias.size(); i++) {
+            tableModel.addRow(campanias.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadosCampaniasAplicadas(ArrayList<CampaniaAplicada> campaniaAplicadas) {
+        String[] headers = {"CRÉDITO No.", "NOMBRE DEL CLIENTE", "CAMPAÑA DESCRISCION", "FECHA DE APLICACION", "ID CAMPAÑA", "ALIAS USARIO"};
+        this.tblResultadoscampaniasAplicadas.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoscampaniasAplicadas.setModel(tableModel);
+        for (int i = 0; i < campaniaAplicadas.size(); i++) {
+            tableModel.addRow(campaniaAplicadas.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadosConsumo(ArrayList<Consumo> consumos) {
+        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR", "ID ASESOR", "ID CAMPAÑIA"};
+        this.tblResultadoConsumo.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoConsumo.setModel(tableModel);
+        for (int i = 0; i < consumos.size(); i++) {
+            tableModel.addRow(consumos.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadosAsesor(ArrayList<AsesorComercial> asesorComercials) {
+        String[] headers = {"ID", "NOMBRE", "APELLIDO", "SURCUSAL BANCARIA"};
+        this.tblResultadoAsesor.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoAsesor.setModel(tableModel);
+        for (int i = 0; i < asesorComercials.size(); i++) {
+            tableModel.addRow(asesorComercials.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
+        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES","ID CAMPAÑA"};
+        this.tblResultadolibraza.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadolibraza.setModel(tableModel);
+        for (int i = 0; i < libranzas.size(); i++) {
+            tableModel.addRow(libranzas.get(i).toArray());
+        }
+    }
+
+    public void setTblResultadosGeneral(ArrayList<CampaniaAplicada> general) {
+        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "NOMBRE DE ASESOR", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
+        this.tblResultadoGeneral.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoGeneral.setModel(tableModel);
+        for (int i = 0; i < general.size(); i++) {
+            tableModel.addRow(general.get(i).toArrayconsumo());
+        }
+    }
+
+    public void setTblResultadosGeneral2(ArrayList<CampaniaAplicada> general) {
+        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "EMPREZA", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
+        this.tblResultadoGeneral2.removeAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(headers);
+        this.tblResultadoGeneral2.setModel(tableModel);
+        for (int i = 0; i < general.size(); i++) {
+            tableModel.addRow(general.get(i).toArraylibranza());
+        }
+    }
+
 }

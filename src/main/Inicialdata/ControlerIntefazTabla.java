@@ -37,6 +37,10 @@ public class ControlerIntefazTabla {
 
     }
 
+    public ControlerIntefazTabla() {
+       
+    }
+
     public void iniciarVista() {
 
         try {
