@@ -189,8 +189,11 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtCampaniaID" min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="txtCampaniaDescripcion" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtCampaniaID" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -285,6 +288,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCampaniaID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCampaniaDescripcion">
               <Properties>
@@ -319,10 +325,13 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtCampaniaAplicadaFecha" max="32767" attributes="0"/>
+                                  <Component id="txtCampaniaAplicadaFecha" pref="170" max="32767" attributes="0"/>
                                   <Component id="txtCampaniaAplicadaCod" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtCampaniaAplicadaAlias" max="32767" attributes="0"/>
-                                  <Component id="txtCampaniaAplicadaID" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtCampaniaAplicadaID" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -445,6 +454,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCampaniaAplicadaID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCampaniaAplicadaAlias">
             </Component>
@@ -478,37 +490,37 @@
                               <Component id="btnConsumoBorrar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="146" max="32767" attributes="0"/>
                               <Component id="btnConsumoCancelar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblConsumoAsesor" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblConsumoID" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="lblConsumoAsesor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblConsumoID" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtConsumoID" max="32767" attributes="0"/>
+                                  <Component id="txtConsumoAsesor" pref="60" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="88" pref="88" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtConsumoIDCa" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                                      <Component id="txtConsumoAsesor" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
                                       <Component id="lblConsumoTasa" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtConsumoTasa" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblConsumoCuotas" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                       <Component id="txtConsumoCuotas" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="lblConsumoIDCa" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtConsumoIDCa" min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -525,10 +537,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="81" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -536,6 +548,8 @@
                           <Component id="lblConsumoTasa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConsumoAsesor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConsumoTasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
@@ -590,9 +604,9 @@
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblConsumoID">
+            <Component class="javax.swing.JLabel" name="lblConsumoIDCa">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ID CAMPA&#xd1;A:"/>
+                <Property name="text" type="java.lang.String" value="ID campa&#xf1;a:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblConsumoAsesor">
@@ -624,6 +638,16 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtConsumoTasa">
             </Component>
+            <Component class="javax.swing.JLabel" name="lblConsumoID">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtConsumoID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">
@@ -638,8 +662,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Component id="jScrollPane5" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -653,17 +677,14 @@
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="lblLibranzaEmpresa" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblLibranzaID" min="-2" pref="87" max="-2" attributes="0"/>
+                                  <Component id="lblLibranzaID" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                                      <Component id="txtLibranzaIDCa" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtLibranzaEmpresa" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtLibranzaEmpresa" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtLibranzaID" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -672,10 +693,19 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtLibranzaTasa" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="txtLibranzaPlazo" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtLibranzaPlazo" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtLibranzaTasa" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="lblLibranzaIDCa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtLibranzaIDCa" min="-2" pref="44" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -694,10 +724,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="81" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -705,6 +735,8 @@
                           <Component id="txtLibranzaEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblLibranzaTasa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLibranzaTasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
@@ -762,9 +794,9 @@
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblLibranzaID">
+            <Component class="javax.swing.JLabel" name="lblLibranzaIDCa">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ID CAMPA&#xd1;A:"/>
+                <Property name="text" type="java.lang.String" value="ID campa&#xf1;a:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibranzaEmpresa">
@@ -789,6 +821,16 @@
             <Component class="javax.swing.JTextField" name="txtLibranzaPlazo">
             </Component>
             <Component class="javax.swing.JTextField" name="txtLibranzaTasa">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblLibranzaID">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtLibranzaID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1185,6 +1227,9 @@
             <Component class="javax.swing.JTextField" name="txtAsesorNombres">
             </Component>
             <Component class="javax.swing.JTextField" name="txtAsesorID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAsesorSucursal">
             </Component>

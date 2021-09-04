@@ -25,7 +25,7 @@ import utils.ConnectionDB;
 
 /**
  *
- * @author Germán y Lady
+ * @author Germán García
  */
 public class TabbedPane extends javax.swing.JFrame {
     
@@ -98,7 +98,7 @@ public class TabbedPane extends javax.swing.JFrame {
         btnConsumoEditar = new javax.swing.JButton();
         btnConsumoBorrar = new javax.swing.JButton();
         btnConsumoCancelar = new javax.swing.JButton();
-        lblConsumoID = new javax.swing.JLabel();
+        lblConsumoIDCa = new javax.swing.JLabel();
         lblConsumoAsesor = new javax.swing.JLabel();
         lblConsumoCuotas = new javax.swing.JLabel();
         lblConsumoTasa = new javax.swing.JLabel();
@@ -106,6 +106,8 @@ public class TabbedPane extends javax.swing.JFrame {
         txtConsumoAsesor = new javax.swing.JTextField();
         txtConsumoCuotas = new javax.swing.JTextField();
         txtConsumoTasa = new javax.swing.JTextField();
+        lblConsumoID = new javax.swing.JLabel();
+        txtConsumoID = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblLibranza = new javax.swing.JTable();
@@ -113,7 +115,7 @@ public class TabbedPane extends javax.swing.JFrame {
         btnLibranzaEditar = new javax.swing.JButton();
         btnLibranzaBorrar = new javax.swing.JButton();
         btnLibranzaCancelar = new javax.swing.JButton();
-        lblLibranzaID = new javax.swing.JLabel();
+        lblLibranzaIDCa = new javax.swing.JLabel();
         lblLibranzaEmpresa = new javax.swing.JLabel();
         txtLibranzaIDCa = new javax.swing.JTextField();
         txtLibranzaEmpresa = new javax.swing.JTextField();
@@ -121,6 +123,8 @@ public class TabbedPane extends javax.swing.JFrame {
         lblLibranzaTasa = new javax.swing.JLabel();
         txtLibranzaPlazo = new javax.swing.JTextField();
         txtLibranzaTasa = new javax.swing.JTextField();
+        lblLibranzaID = new javax.swing.JLabel();
+        txtLibranzaID = new javax.swing.JTextField();
         panelUsuario = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblUsuario = new javax.swing.JTable();
@@ -269,6 +273,8 @@ public class TabbedPane extends javax.swing.JFrame {
 
         lblCampaniaID.setText("ID:");
 
+        txtCampaniaID.setEditable(false);
+
         lblCampaniaDescripcion.setText("Descripción:");
 
         javax.swing.GroupLayout panelCampaniaLayout = new javax.swing.GroupLayout(panelCampania);
@@ -293,8 +299,10 @@ public class TabbedPane extends javax.swing.JFrame {
                             .addComponent(lblCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCampaniaDescripcion))))
+                            .addComponent(txtCampaniaDescripcion)
+                            .addGroup(panelCampaniaLayout.createSequentialGroup()
+                                .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(36, 36, 36))
         );
         panelCampaniaLayout.setVerticalGroup(
@@ -354,6 +362,8 @@ public class TabbedPane extends javax.swing.JFrame {
 
         lblCampaniaAplicadaFecha.setText("Fecha:");
 
+        txtCampaniaAplicadaID.setEditable(false);
+
         javax.swing.GroupLayout panelCampaniaAplicadaLayout = new javax.swing.GroupLayout(panelCampaniaAplicada);
         panelCampaniaAplicada.setLayout(panelCampaniaAplicadaLayout);
         panelCampaniaAplicadaLayout.setHorizontalGroup(
@@ -369,10 +379,12 @@ public class TabbedPane extends javax.swing.JFrame {
                             .addComponent(lblCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCampaniaAplicadaFecha)
+                            .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                             .addComponent(txtCampaniaAplicadaCod)
                             .addComponent(txtCampaniaAplicadaAlias)
-                            .addComponent(txtCampaniaAplicadaID)))
+                            .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
+                                .addComponent(txtCampaniaAplicadaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
                         .addComponent(brnCampaniaAplicadaAgregar)
                         .addGap(77, 77, 77)
@@ -441,7 +453,7 @@ public class TabbedPane extends javax.swing.JFrame {
 
         btnConsumoCancelar.setText("Cancelar");
 
-        lblConsumoID.setText("ID CAMPAÑA:");
+        lblConsumoIDCa.setText("ID campaña:");
 
         lblConsumoAsesor.setText("Asesor:");
 
@@ -461,6 +473,10 @@ public class TabbedPane extends javax.swing.JFrame {
             }
         });
 
+        lblConsumoID.setText("ID:");
+
+        txtConsumoID.setEditable(false);
+
         javax.swing.GroupLayout panelConsumoLayout = new javax.swing.GroupLayout(panelConsumo);
         panelConsumo.setLayout(panelConsumoLayout);
         panelConsumoLayout.setHorizontalGroup(
@@ -476,29 +492,30 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addGap(80, 80, 80)
                         .addComponent(btnConsumoBorrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                        .addComponent(btnConsumoCancelar)
-                        .addGap(34, 34, 34))
+                        .addComponent(btnConsumoCancelar))
                     .addGroup(panelConsumoLayout.createSequentialGroup()
                         .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblConsumoAsesor)
-                            .addComponent(lblConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelConsumoLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(txtConsumoAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtConsumoID)
+                            .addComponent(txtConsumoAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
                         .addGap(88, 88, 88)
-                        .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelConsumoLayout.createSequentialGroup()
                                 .addComponent(lblConsumoTasa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtConsumoTasa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelConsumoLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsumoLayout.createSequentialGroup()
                                 .addComponent(lblConsumoCuotas)
                                 .addGap(47, 47, 47)
                                 .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34))
         );
         panelConsumoLayout.setVerticalGroup(
             panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,16 +529,18 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(btnConsumoCancelar))
                 .addGap(28, 28, 28)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblConsumoID)
                     .addComponent(lblConsumoCuotas)
-                    .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblConsumoID)
+                    .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoAsesor)
                     .addComponent(lblConsumoTasa)
                     .addComponent(txtConsumoAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtConsumoTasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtConsumoTasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblConsumoIDCa)
+                    .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
         );
 
@@ -558,13 +577,17 @@ public class TabbedPane extends javax.swing.JFrame {
 
         btnLibranzaCancelar.setText("Cancelar");
 
-        lblLibranzaID.setText("ID CAMPAÑA:");
+        lblLibranzaIDCa.setText("ID campaña:");
 
         lblLibranzaEmpresa.setText("Empresa:");
 
         lblLibranzaPlazo.setText("Meses plazo:");
 
         lblLibranzaTasa.setText("Tasa de interés:");
+
+        lblLibranzaID.setText("ID:");
+
+        txtLibranzaID.setEditable(false);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -584,24 +607,29 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addComponent(btnLibranzaCancelar)
                         .addGap(51, 51, 51))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblLibranzaEmpresa)
-                            .addComponent(lblLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblLibranzaID))
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblLibranzaPlazo)
                             .addComponent(lblLibranzaTasa))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtLibranzaTasa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(txtLibranzaTasa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblLibranzaIDCa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42))))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,16 +643,18 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(btnLibranzaCancelar))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLibranzaID)
-                    .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaPlazo)
-                    .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLibranzaID)
+                    .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaEmpresa)
                     .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaTasa)
-                    .addComponent(txtLibranzaTasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLibranzaTasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLibranzaIDCa)
+                    .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47))
         );
 
@@ -814,6 +844,8 @@ public class TabbedPane extends javax.swing.JFrame {
         lblAsesorApellidos.setText("Apellidos:");
 
         lblAsesorSucursal.setText("Sucursal:");
+
+        txtAsesorID.setEditable(false);
 
         javax.swing.GroupLayout panelAsesorLayout = new javax.swing.GroupLayout(panelAsesor);
         panelAsesor.setLayout(panelAsesorLayout);
@@ -1112,9 +1144,11 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JLabel lblConsumoAsesor;
     private javax.swing.JLabel lblConsumoCuotas;
     private javax.swing.JLabel lblConsumoID;
+    private javax.swing.JLabel lblConsumoIDCa;
     private javax.swing.JLabel lblConsumoTasa;
     private javax.swing.JLabel lblLibranzaEmpresa;
     private javax.swing.JLabel lblLibranzaID;
+    private javax.swing.JLabel lblLibranzaIDCa;
     private javax.swing.JLabel lblLibranzaPlazo;
     private javax.swing.JLabel lblLibranzaTasa;
     private javax.swing.JLabel lblUsuarioAlias;
@@ -1151,9 +1185,11 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JTextField txtCampaniaID;
     private javax.swing.JTextField txtConsumoAsesor;
     private javax.swing.JTextField txtConsumoCuotas;
+    private javax.swing.JTextField txtConsumoID;
     private javax.swing.JTextField txtConsumoIDCa;
     private javax.swing.JTextField txtConsumoTasa;
     private javax.swing.JTextField txtLibranzaEmpresa;
+    private javax.swing.JTextField txtLibranzaID;
     private javax.swing.JTextField txtLibranzaIDCa;
     private javax.swing.JTextField txtLibranzaPlazo;
     private javax.swing.JTextField txtLibranzaTasa;
