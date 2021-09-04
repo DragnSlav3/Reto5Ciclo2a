@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package main.view;
+
 import java.awt.Toolkit;
 import main.accessDAL.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import javax.swing.JTable;
 import utils.ConnectionDB;
 
 /**
@@ -15,7 +17,6 @@ import utils.ConnectionDB;
  * @author Germán y Lady
  */
 public class TabbedPane extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form TabbedPane
@@ -79,7 +80,7 @@ public class TabbedPane extends javax.swing.JFrame {
         lblConsumoAsesor = new javax.swing.JLabel();
         lblConsumoCuotas = new javax.swing.JLabel();
         lblConsumoTasa = new javax.swing.JLabel();
-        txtConsumoID = new javax.swing.JTextField();
+        txtConsumoIDCa = new javax.swing.JTextField();
         txtConsumoAsesor = new javax.swing.JTextField();
         txtConsumoCuotas = new javax.swing.JTextField();
         txtConsumoTasa = new javax.swing.JTextField();
@@ -92,7 +93,7 @@ public class TabbedPane extends javax.swing.JFrame {
         btnLibranzaCancelar = new javax.swing.JButton();
         lblLibranzaID = new javax.swing.JLabel();
         lblLibranzaEmpresa = new javax.swing.JLabel();
-        txtLibranzaID = new javax.swing.JTextField();
+        txtLibranzaIDCa = new javax.swing.JTextField();
         txtLibranzaEmpresa = new javax.swing.JTextField();
         lblLibranzaPlazo = new javax.swing.JLabel();
         lblLibranzaTasa = new javax.swing.JLabel();
@@ -214,6 +215,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblCampania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCampaniaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblCampania);
 
         btnCampaniaAgregar.setText("Agregar");
@@ -293,6 +299,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblCampaniaAplicada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCampaniaAplicadaMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblCampaniaAplicada);
 
         brnCampaniaAplicadaAgregar.setText("Agregar");
@@ -383,6 +394,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblConsumo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblConsumoMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tblConsumo);
 
         btnConsumoAgregar.setText("Agregar");
@@ -393,7 +409,7 @@ public class TabbedPane extends javax.swing.JFrame {
 
         btnConsumoCancelar.setText("Cancelar");
 
-        lblConsumoID.setText("ID:");
+        lblConsumoID.setText("ID CAMPAÑA:");
 
         lblConsumoAsesor.setText("Asesor:");
 
@@ -401,9 +417,15 @@ public class TabbedPane extends javax.swing.JFrame {
 
         lblConsumoTasa.setText("Tasa de interés:");
 
-        txtConsumoID.addActionListener(new java.awt.event.ActionListener() {
+        txtConsumoIDCa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConsumoIDActionPerformed(evt);
+                txtConsumoIDCaActionPerformed(evt);
+            }
+        });
+
+        txtConsumoCuotas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtConsumoCuotasMouseClicked(evt);
             }
         });
 
@@ -426,15 +448,15 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addGap(34, 34, 34))
                     .addGroup(panelConsumoLayout.createSequentialGroup()
                         .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblConsumoAsesor)
+                            .addComponent(lblConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelConsumoLayout.createSequentialGroup()
-                                .addComponent(lblConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelConsumoLayout.createSequentialGroup()
-                                .addComponent(lblConsumoAsesor)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(3, 3, 3)
                                 .addComponent(txtConsumoAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(134, 134, 134)
+                        .addGap(88, 88, 88)
                         .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelConsumoLayout.createSequentialGroup()
                                 .addComponent(lblConsumoTasa)
@@ -460,7 +482,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoID)
                     .addComponent(lblConsumoCuotas)
-                    .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConsumoIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -484,6 +506,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblLibranza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLibranzaMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tblLibranza);
 
         btnLibranzaAgregar.setText("Agregar");
@@ -499,7 +526,7 @@ public class TabbedPane extends javax.swing.JFrame {
 
         btnLibranzaCancelar.setText("Cancelar");
 
-        lblLibranzaID.setText("ID:");
+        lblLibranzaID.setText("ID CAMPAÑA:");
 
         lblLibranzaEmpresa.setText("Empresa:");
 
@@ -526,15 +553,15 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addGap(51, 51, 51))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblLibranzaEmpresa)
+                            .addComponent(lblLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(lblLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(lblLibranzaEmpresa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(14, 14, 14)
+                                .addGap(3, 3, 3)
+                                .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblLibranzaPlazo)
                             .addComponent(lblLibranzaTasa))
@@ -557,7 +584,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaID)
-                    .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLibranzaIDCa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaPlazo)
                     .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
@@ -582,6 +609,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblUsuarioMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(tblUsuario);
 
         btnUsuarioAgregar.setText("Agregar");
@@ -723,6 +755,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblAsesor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAsesorMouseClicked(evt);
+            }
+        });
         jScrollPane7.setViewportView(tblAsesor);
 
         btnAsesorAgregar.setText("Agregar");
@@ -828,9 +865,9 @@ public class TabbedPane extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCampaniaAgregarActionPerformed
 
-    private void txtConsumoIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsumoIDActionPerformed
+    private void txtConsumoIDCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsumoIDCaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConsumoIDActionPerformed
+    }//GEN-LAST:event_txtConsumoIDCaActionPerformed
 
     private void btnLibranzaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibranzaAgregarActionPerformed
         // TODO add your handling code here:
@@ -844,8 +881,7 @@ public class TabbedPane extends javax.swing.JFrame {
         // TODO add your handling code here:
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.AgregarGerman("insert into usuario values ('dragnslav3', 'german', 'garcia', 'dragnslav3@gmail.com', '3008281940', 'admin', '21/09/1981');");
-        
-        
+
         /*
         Connection conn=ConnectionDB.getConnection();
         
@@ -859,6 +895,82 @@ public class TabbedPane extends javax.swing.JFrame {
             System.out.println(e);
         }*/
     }//GEN-LAST:event_btnUsuarioAgregarActionPerformed
+
+    private void tblCampaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCampaniaMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtCampaniaID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
+            txtCampaniaDescripcion.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
+
+        }
+
+    }//GEN-LAST:event_tblCampaniaMouseClicked
+
+    private void tblCampaniaAplicadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCampaniaAplicadaMouseClicked
+
+        if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtCampaniaAplicadaID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
+            txtCampaniaAplicadaCod.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
+            txtCampaniaAplicadaAlias.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
+            txtCampaniaAplicadaFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+
+        }
+
+    }//GEN-LAST:event_tblCampaniaAplicadaMouseClicked
+
+    private void txtConsumoCuotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtConsumoCuotasMouseClicked
+
+    }//GEN-LAST:event_txtConsumoCuotasMouseClicked
+
+    private void tblConsumoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblConsumoMouseClicked
+        if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtConsumoIDCa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 6).toString());
+            txtConsumoAsesor.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
+            txtConsumoCuotas.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
+            txtConsumoTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+
+        }
+    }//GEN-LAST:event_tblConsumoMouseClicked
+
+    private void tblLibranzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLibranzaMouseClicked
+        if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtLibranzaIDCa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
+            txtLibranzaEmpresa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
+            txtLibranzaPlazo.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+            txtLibranzaTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
+
+        }
+    }//GEN-LAST:event_tblLibranzaMouseClicked
+
+    private void tblUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarioMouseClicked
+        if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtUsuarioAlias.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
+            txtUsuarioNombres.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
+            txtUsuarioApellidos.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
+            txtUsuarioEmail.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+            txtUsuarioCelular.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
+            txtUsuarioContrasena.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
+            txtUsuarioFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 6).toString());
+
+        }
+    }//GEN-LAST:event_tblUsuarioMouseClicked
+
+    private void tblAsesorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAsesorMouseClicked
+       if (evt.getClickCount() == 1) {
+            JTable receptor = (JTable) evt.getSource();
+            txtAsesorID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
+            txtAsesorNombres.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
+            txtAsesorApellidos.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
+            txtAsesorSucursal.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+           
+
+        }
+    }//GEN-LAST:event_tblAsesorMouseClicked
 
     /**
      * @param args the command line arguments
@@ -983,10 +1095,10 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JTextField txtCampaniaID;
     private javax.swing.JTextField txtConsumoAsesor;
     private javax.swing.JTextField txtConsumoCuotas;
-    private javax.swing.JTextField txtConsumoID;
+    private javax.swing.JTextField txtConsumoIDCa;
     private javax.swing.JTextField txtConsumoTasa;
     private javax.swing.JTextField txtLibranzaEmpresa;
-    private javax.swing.JTextField txtLibranzaID;
+    private javax.swing.JTextField txtLibranzaIDCa;
     private javax.swing.JTextField txtLibranzaPlazo;
     private javax.swing.JTextField txtLibranzaTasa;
     private javax.swing.JTextField txtUsuarioAlias;

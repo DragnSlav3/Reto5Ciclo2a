@@ -35,7 +35,10 @@ public class Consumo {
         this.CmpDescripcion = CmpDescripcion;
         this.AsrNombre = AsrNombre;
     }
-
+ public Object[] toArray() {
+        Object[] data = {CsmIdPrimary, CmpDescripcion, CsmCuotas, CsmTasaInteres, AsrNombre,CsmAsesor,CsmId};
+        return data;
+    }
     public int getCsmIdPrimary() {
         return CsmIdPrimary;
     }
@@ -76,9 +79,6 @@ public class Consumo {
         this.CsmAsesor = CsmAsesor;
     }
 
-    public Object[] toArray() {
-        Object[] data = {CsmId, CmpDescripcion, CsmCuotas, CsmTasaInteres, AsrNombre};
-        return data;
-    }
+   
 
 }

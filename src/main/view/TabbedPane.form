@@ -243,6 +243,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCampaniaMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -388,6 +391,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblCampaniaAplicadaMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -472,18 +478,18 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblConsumoID" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtConsumoID" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblConsumoAsesor" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblConsumoAsesor" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblConsumoID" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtConsumoIDCa" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                                       <Component id="txtConsumoAsesor" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="lblConsumoTasa" min="-2" max="-2" attributes="0"/>
@@ -517,7 +523,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="81" max="32767" attributes="0"/>
@@ -551,6 +557,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblConsumoMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -579,7 +588,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblConsumoID">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
+                <Property name="text" type="java.lang.String" value="ID CAMPA&#xd1;A:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblConsumoAsesor">
@@ -597,14 +606,17 @@
                 <Property name="text" type="java.lang.String" value="Tasa de inter&#xe9;s:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConsumoID">
+            <Component class="javax.swing.JTextField" name="txtConsumoIDCa">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConsumoIDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConsumoIDCaActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtConsumoAsesor">
             </Component>
             <Component class="javax.swing.JTextField" name="txtConsumoCuotas">
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtConsumoCuotasMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtConsumoTasa">
             </Component>
@@ -638,18 +650,18 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblLibranzaID" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtLibranzaID" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblLibranzaEmpresa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtLibranzaEmpresa" min="-2" pref="150" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblLibranzaEmpresa" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblLibranzaID" min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                      <Component id="txtLibranzaIDCa" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtLibranzaEmpresa" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="lblLibranzaPlazo" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLibranzaTasa" min="-2" max="-2" attributes="0"/>
@@ -679,7 +691,7 @@
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -714,6 +726,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblLibranzaMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -745,7 +760,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibranzaID">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
+                <Property name="text" type="java.lang.String" value="ID CAMPA&#xd1;A:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLibranzaEmpresa">
@@ -753,7 +768,7 @@
                 <Property name="text" type="java.lang.String" value="Empresa:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtLibranzaID">
+            <Component class="javax.swing.JTextField" name="txtLibranzaIDCa">
             </Component>
             <Component class="javax.swing.JTextField" name="txtLibranzaEmpresa">
             </Component>
@@ -920,6 +935,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblUsuarioMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -1108,6 +1126,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblAsesorMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>

@@ -102,7 +102,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosConsumo(ArrayList<Consumo> consumos) {
-        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR"};
+        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR", "ID ASESOR", "ID CAMPAÑIA"};
         this.tblResultadoConsumo.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -124,7 +124,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
-        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES"};
+        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES","ID CAMPAÑA"};
         this.tblResultadolibraza.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
