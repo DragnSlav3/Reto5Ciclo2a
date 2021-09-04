@@ -115,14 +115,14 @@ public class ConsumoDAO {
 
     }
 
-    public void EliminarConsumo(Consumo eliminarcons) {
+    public void EliminarConsumo(int eliminarcons) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            String sql = "DELETE FROM consumo WHERE csm_idprimary = ?;";
+            String sql = "DELETE FROM consumo WHERE csm_idprimary = "+eliminarcons+";";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(0,eliminarcons.getCsmIdPrimary());
+         
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {

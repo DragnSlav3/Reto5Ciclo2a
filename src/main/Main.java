@@ -15,9 +15,10 @@ public class Main {
      */
     public static void main(String[] args) {
         TabbedPane InterfasPane = new TabbedPane();
+        /*
         ControlerIntefazTabla controv = new ControlerIntefazTabla(InterfasPane);
         controv.iniciarVista();
-        
+        */
         InterfasPane.setVisible(true);
     }
     

@@ -28,8 +28,7 @@ import utils.ConnectionDB;
  * @author Germán García
  */
 public class TabbedPane extends javax.swing.JFrame {
-    
-    
+
     private InitialData inicialdata = null;
     private JTable tblResultadosUsuaros;
     private JTable tblResultadoscampania;
@@ -352,6 +351,11 @@ public class TabbedPane extends javax.swing.JFrame {
         brnCampaniaAplicadaEditar.setText("Editar");
 
         brnCampaniaAplicadaBorrar.setText("Borrar");
+        brnCampaniaAplicadaBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnCampaniaAplicadaBorrarActionPerformed(evt);
+            }
+        });
 
         brnCampaniaAplicadaCancelar.setText("Cancelar");
 
@@ -451,6 +455,11 @@ public class TabbedPane extends javax.swing.JFrame {
         btnConsumoEditar.setText("Editar");
 
         btnConsumoBorrar.setText("Borrar");
+        btnConsumoBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsumoBorrarActionPerformed(evt);
+            }
+        });
 
         btnConsumoCancelar.setText("Cancelar");
 
@@ -986,7 +995,7 @@ public class TabbedPane extends javax.swing.JFrame {
             txtCampaniaAplicadaCod.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
             txtCampaniaAplicadaAlias.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
             txtCampaniaAplicadaFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
-
+            brnCampaniaAplicadaBorrar.setEnabled(true);
         }
 
     }//GEN-LAST:event_tblCampaniaAplicadaMouseClicked
@@ -998,11 +1007,12 @@ public class TabbedPane extends javax.swing.JFrame {
     private void tblConsumoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblConsumoMouseClicked
         if (evt.getClickCount() == 1) {
             JTable receptor = (JTable) evt.getSource();
+            txtConsumoID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             txtConsumoIDCa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 6).toString());
             txtConsumoAsesor.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
             txtConsumoCuotas.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtConsumoTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
-
+            btnConsumoBorrar.setEnabled(true);
         }
     }//GEN-LAST:event_tblConsumoMouseClicked
 
@@ -1032,27 +1042,26 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_tblUsuarioMouseClicked
 
     private void tblAsesorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAsesorMouseClicked
-       if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 1) {
             JTable receptor = (JTable) evt.getSource();
             txtAsesorID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             txtAsesorNombres.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
             txtAsesorApellidos.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtAsesorSucursal.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
-           
 
         }
     }//GEN-LAST:event_tblAsesorMouseClicked
 
     private void btnAsesorBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsesorBorrarMouseClicked
-       
-        
+
+
     }//GEN-LAST:event_btnAsesorBorrarMouseClicked
 
     private void btnCampaniaBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCampaniaBorrarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCampaniaBorrarMouseClicked
 
-    
+
     private void btnCampaniaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaBorrarActionPerformed
         int idcampania = Integer.parseInt(txtCampaniaID.getText());
         CampaniaDAO campaniaDAO = new CampaniaDAO();
@@ -1060,10 +1069,39 @@ public class TabbedPane extends javax.swing.JFrame {
         iniciarVista();
         txtCampaniaID.setText("");
         txtCampaniaDescripcion.setText("");
-        
-        
-       
+        btnCampaniaBorrar.setEnabled(false);
+
+
     }//GEN-LAST:event_btnCampaniaBorrarActionPerformed
+
+    private void brnCampaniaAplicadaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnCampaniaAplicadaBorrarActionPerformed
+
+        int idcampaniaApp = Integer.parseInt(txtCampaniaAplicadaID.getText());
+        CampaniasAppDAO campaniasAppDAO = new CampaniasAppDAO();
+        campaniasAppDAO.EliminarCampaniaApli(idcampaniaApp);
+        iniciarVista();
+        txtCampaniaAplicadaID.setText("");
+        txtCampaniaAplicadaAlias.setText("");
+        txtCampaniaAplicadaCod.setText("");
+        txtCampaniaAplicadaFecha.setText("");
+        brnCampaniaAplicadaBorrar.setEnabled(false);
+
+    }//GEN-LAST:event_brnCampaniaAplicadaBorrarActionPerformed
+
+    private void btnConsumoBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumoBorrarActionPerformed
+
+        int idconsumo = Integer.parseInt(txtConsumoID.getText());
+        ConsumoDAO consumoDAO = new ConsumoDAO();
+        consumoDAO.EliminarConsumo(idconsumo);
+        iniciarVista();
+        txtConsumoAsesor.setText("");
+        txtConsumoCuotas.setText("");
+        txtConsumoIDCa.setText("");
+        txtConsumoID.setText("");
+        txtConsumoTasa.setText("");
+
+        btnConsumoBorrar.setEnabled(false);
+    }//GEN-LAST:event_btnConsumoBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1210,7 +1248,7 @@ public class TabbedPane extends javax.swing.JFrame {
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/icon.png")));
     }
-    
+
     public void iniciarVista() {
 
         try {
@@ -1218,8 +1256,6 @@ public class TabbedPane extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        
 
         this.tblResultadosUsuaros = tblUsuario;
         this.tblResultadoscampania = tblCampania;
@@ -1229,9 +1265,9 @@ public class TabbedPane extends javax.swing.JFrame {
         this.tblResultadolibraza = tblLibranza;
         this.tblResultadoGeneral = tblGeneral1;
         this.tblResultadoGeneral2 = tblGeneral2;
-        
+
         InitialData initialData = new InitialData();
-        
+
         this.setTblResultadosGeneral2(initialData.getConsultaLibranza());
         this.setTblResultadosGeneral(initialData.getConsultaConsumo());
         this.setTblResultadosConsumo(initialData.getConsumos());
@@ -1240,10 +1276,11 @@ public class TabbedPane extends javax.swing.JFrame {
         this.setTblResultadosUsuario(initialData.getUsuarios());
         this.setTblResultadosAsesor(initialData.getAsesores());
         this.setTblResultadoslibranza(initialData.getLibranzas());
-        
+
         btnCampaniaBorrar.setEnabled(false);
-        
-        
+        brnCampaniaAplicadaBorrar.setEnabled(false);
+        btnConsumoBorrar.setEnabled(false);
+
     }
 
     public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
@@ -1302,7 +1339,7 @@ public class TabbedPane extends javax.swing.JFrame {
     }
 
     public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
-        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES","ID CAMPAÑA"};
+        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES", "ID CAMPAÑA"};
         this.tblResultadolibraza.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);

@@ -154,15 +154,15 @@ public class CampaniasAppDAO {
 
     }
 
-    public void EliminarCampaniaApli(CampaniaAplicada Campaniaeliminar) {
+    public void EliminarCampaniaApli(int Campaniaeliminar) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "DELETE FROM campania_aplicada WHERE campania_aplicada.cpa_app_id = ?;";
+            String sql = "DELETE FROM campania_aplicada WHERE campania_aplicada.cpa_app_id = "+Campaniaeliminar+";";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(0, Campaniaeliminar.getCpaAppId());
+           // stadatosActualiza.setInt(0, Campaniaeliminar);
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {
