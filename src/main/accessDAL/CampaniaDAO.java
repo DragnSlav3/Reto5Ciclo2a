@@ -144,9 +144,9 @@ public class CampaniaDAO {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "INSERT INTO campania(cmp_id, cmp_descripcion) VALUES (?, ?); ";
+            String sql = "INSERT INTO campania(cmp_descripcion) VALUES (?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setInt(0, CampaniaAgregar.getCmpId() );
+            //stadatos.setInt(0, CampaniaAgregar.getCmpId() );
             stadatos.setString(1, CampaniaAgregar.getCmpDescripcion());
             int NumerosRowsInserted = stadatos.executeUpdate();
             //opcional

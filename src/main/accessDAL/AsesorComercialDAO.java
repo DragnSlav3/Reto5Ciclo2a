@@ -157,14 +157,14 @@ public class AsesorComercialDAO {
 
     }
 
-    public void EliminaAsesorComercial(AsesorComercial eliminarAsesorcomercial) {
+    public void EliminaAsesorComercial(int eliminarAsesorcomercial) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
             String sql = " delete from asesor_comercial WHERE 	asr_id = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(0, eliminarAsesorcomercial.getAsrId());
+            stadatosActualiza.setInt(1, eliminarAsesorcomercial);
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {

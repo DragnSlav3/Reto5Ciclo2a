@@ -33,13 +33,11 @@ public class ControlerIntefazTabla {
     private JTable tblResultadoGeneral2;
 
     public ControlerIntefazTabla(TabbedPane tabbedPane) {
+     
         this.interfaz = tabbedPane;
 
     }
 
-    public ControlerIntefazTabla() {
-       
-    }
 
     public void iniciarVista() {
 
@@ -60,8 +58,23 @@ public class ControlerIntefazTabla {
         this.tblResultadoGeneral = interfaz.tblGeneral1;
         this.tblResultadoGeneral2 = interfaz.tblGeneral2;
         
+         try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        this.tblResultadosUsuaros = interfaz.tblUsuario;
+        this.tblResultadoscampania = interfaz.tblCampania;
+        this.tblResultadoscampaniasAplicadas = interfaz.tblCampaniaAplicada;
+        this.tblResultadoConsumo = interfaz.tblConsumo;
+        this.tblResultadoAsesor = interfaz.tblAsesor;
+        this.tblResultadolibraza = interfaz.tblLibranza;
+        this.tblResultadoGeneral = interfaz.tblGeneral1;
+        this.tblResultadoGeneral2 = interfaz.tblGeneral2;
+
         InitialData initialData = new InitialData();
-        
+
         this.setTblResultadosGeneral2(initialData.getConsultaLibranza());
         this.setTblResultadosGeneral(initialData.getConsultaConsumo());
         this.setTblResultadosConsumo(initialData.getConsumos());
@@ -70,6 +83,15 @@ public class ControlerIntefazTabla {
         this.setTblResultadosUsuario(initialData.getUsuarios());
         this.setTblResultadosAsesor(initialData.getAsesores());
         this.setTblResultadoslibranza(initialData.getLibranzas());
+
+        interfaz.btnCampaniaBorrar.setEnabled(false);
+        interfaz.brnCampaniaAplicadaBorrar.setEnabled(false);
+        interfaz.btnConsumoBorrar.setEnabled(false);
+        interfaz.btnLibranzaBorrar.setEnabled(false);
+        interfaz.btnUsuarioBorrar.setEnabled(false);
+        interfaz.btnAsesorBorrar.setEnabled(false);
+        
+
     }
 
     public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
@@ -84,7 +106,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosCampanias(ArrayList<Campania> campanias) {
-        String[] headers = {"ID", "Descripción"};
+        String[] headers = {"ID", "DESCRIPCION"};
         this.tblResultadoscampania.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -95,7 +117,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosCampaniasAplicadas(ArrayList<CampaniaAplicada> campaniaAplicadas) {
-        String[] headers = {"Crédito No.", "Nombre usuario", "Descripción campaña", "Fecha aplicación", "ID campaña", "Alias usuario"};
+        String[] headers = {"CRÉDITO No.", "NOMBRE DEL CLIENTE", "CAMPAÑA DESCRISCION", "FECHA DE APLICACION", "ID CAMPAÑA", "ALIAS USARIO"};
         this.tblResultadoscampaniasAplicadas.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -106,7 +128,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosConsumo(ArrayList<Consumo> consumos) {
-        String[] headers = {"ID", "Descripción campaña", "Cuotas", "Tasa de interés", "Nombre asesor", "ID asesor", "ID campaña"};
+        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR", "ID ASESOR", "ID CAMPAÑIA"};
         this.tblResultadoConsumo.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -117,7 +139,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosAsesor(ArrayList<AsesorComercial> asesorComercials) {
-        String[] headers = {"ID", "Nombre", "Apellido", "Sucursal bancaria"};
+        String[] headers = {"ID", "NOMBRE", "APELLIDO", "SURCUSAL BANCARIA"};
         this.tblResultadoAsesor.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -128,7 +150,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
-        String[] headers = {"ID", "Descripción campaña", "Empresa", "Meses de plazo", "Tasa de interés","ID campaña"};
+        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES", "ID CAMPAÑA"};
         this.tblResultadolibraza.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -139,7 +161,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosGeneral(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "Nombre usuario", "Descripción campaña", "Nombre asesor", "Fecha aplicación", "Alias usuario", "ID campaña"};
+        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "NOMBRE DE ASESOR", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
         this.tblResultadoGeneral.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -150,7 +172,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosGeneral2(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "Nombre usuario", "Descripción campaña", "Empresa", "Fecha aplicación", "Alias usuario", "ID campaña"};
+        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "EMPREZA", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
         this.tblResultadoGeneral2.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);

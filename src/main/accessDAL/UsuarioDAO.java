@@ -52,7 +52,7 @@ public class UsuarioDAO {
             String sql = "select usr_alias AS \"ALIAS\", usr_nombres AS \"NOMBRES\", usr_apellidos AS \"APELLIDOS\", usr_email AS \"CORREO ELECTRONICO\", usr_celular AS \"CELULAR\", usr_clave AS \"CLAVE\", usr_fecha_nto AS \"FECHA DE NACIMIENTO\" from usuario\n"
                     + "where usr_alias = ?;";
             PreparedStatement consultadatos = conn.prepareStatement(sql);
-            consultadatos.setString(0, usrAlias);
+            consultadatos.setString(1, usrAlias);
             ResultSet resultado = consultadatos.executeQuery();
             usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
 
@@ -117,13 +117,13 @@ public class UsuarioDAO {
 
             String sql = "insert into usuario(usr_alias, usr_nombres, usr_apellidos, usr_email, usr_celular, usr_clave, usr_fecha_nto) values (?, ?, ?, ?, ?, ?, ?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setString(0, usuarioAgregar.getUsrAlias());
-            stadatos.setString(1, usuarioAgregar.getUsrNombres());
-            stadatos.setString(2, usuarioAgregar.getUsrApellidos());
-            stadatos.setString(3, usuarioAgregar.getUsrEmail());
-            stadatos.setString(4, usuarioAgregar.getUsrCelular());
-            stadatos.setString(5, usuarioAgregar.getUsrClave());
-            stadatos.setString(6, usuarioAgregar.getUsrFechaNto());
+            stadatos.setString(1, usuarioAgregar.getUsrAlias());
+            stadatos.setString(2, usuarioAgregar.getUsrNombres());
+            stadatos.setString(3, usuarioAgregar.getUsrApellidos());
+            stadatos.setString(4, usuarioAgregar.getUsrEmail());
+            stadatos.setString(5, usuarioAgregar.getUsrCelular());
+            stadatos.setString(6, usuarioAgregar.getUsrClave());
+            stadatos.setString(7, usuarioAgregar.getUsrFechaNto());
 
             int NumerosRowsInserted = stadatos.executeUpdate();
             //opcional
@@ -144,14 +144,14 @@ public class UsuarioDAO {
             }
             String sql = " UPDATE usuario SET usr_alias = ?, usr_nombres = ?, usr_apellidos = ?, usr_email = ? , usr_celular = ?, usr_clave = ? ,usr_fecha_nto = ? WHERE usr_alias = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setString(0, usuarioActualizar.getUsrAlias());
-            stadatosActualiza.setString(1, usuarioActualizar.getUsrNombres());
-            stadatosActualiza.setString(2, usuarioActualizar.getUsrApellidos());
-            stadatosActualiza.setString(3, usuarioActualizar.getUsrEmail());
-            stadatosActualiza.setString(4, usuarioActualizar.getUsrCelular());
-            stadatosActualiza.setString(5, usuarioActualizar.getUsrClave());
-            stadatosActualiza.setString(6, usuarioActualizar.getUsrFechaNto());
-            stadatosActualiza.setString(7, usuarioActualizar.getUsrAlias());
+            stadatosActualiza.setString(1, usuarioActualizar.getUsrAlias());
+            stadatosActualiza.setString(2, usuarioActualizar.getUsrNombres());
+            stadatosActualiza.setString(3, usuarioActualizar.getUsrApellidos());
+            stadatosActualiza.setString(4, usuarioActualizar.getUsrEmail());
+            stadatosActualiza.setString(5, usuarioActualizar.getUsrCelular());
+            stadatosActualiza.setString(6, usuarioActualizar.getUsrClave());
+            stadatosActualiza.setString(7, usuarioActualizar.getUsrFechaNto());
+            stadatosActualiza.setString(8, usuarioActualizar.getUsrAlias());
 
             int resulconsul = stadatosActualiza.executeUpdate();
             //OPCIONAL 
@@ -166,14 +166,15 @@ public class UsuarioDAO {
 
     }
 
-    public void EliminarUsuario(UsuarioModelBL usuarioeliminar) {
+    public void EliminarUsuario(String UsuarioAlias) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            String sql = " delete from usuario where usr_alias = ?;";
+            String sql = "delete from usuario where usr_alias = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setString(0, usuarioeliminar.getUsrAlias());
+            System.out.println("Estoy ");
+            stadatosActualiza.setString(1, UsuarioAlias);
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {

@@ -30,14 +30,8 @@ import utils.ConnectionDB;
 public class TabbedPane extends javax.swing.JFrame {
 
     private InitialData inicialdata = null;
-    private JTable tblResultadosUsuaros;
-    private JTable tblResultadoscampania;
-    private JTable tblResultadoscampaniasAplicadas;
-    private JTable tblResultadoConsumo;
-    private JTable tblResultadoAsesor;
-    private JTable tblResultadolibraza;
-    private JTable tblResultadoGeneral;
-    private JTable tblResultadoGeneral2;
+    private ControlerIntefazTabla controlerIntefazTabla;
+    public String usuarioAliasActual = null;
 
     /**
      * Creates new form TabbedPane
@@ -45,7 +39,16 @@ public class TabbedPane extends javax.swing.JFrame {
     public TabbedPane() {
         initComponents();
         setIcon();
-        iniciarVista();
+        iniciarVista2(this);
+    }
+
+    public void iniciarVista2(TabbedPane TabbedPane) {
+        this.controlerIntefazTabla = new ControlerIntefazTabla(TabbedPane);
+        controlerIntefazTabla.iniciarVista();
+    }
+
+    public void iniciarVista() {
+        controlerIntefazTabla.iniciarVista();
     }
 
     /**
@@ -270,6 +273,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnCampaniaCancelar.setText("Cancelar");
+        btnCampaniaCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampaniaCancelarActionPerformed(evt);
+            }
+        });
 
         lblCampaniaID.setText("ID:");
 
@@ -509,9 +517,9 @@ public class TabbedPane extends javax.swing.JFrame {
                             .addComponent(lblConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49)
                         .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtConsumoID)
-                            .addComponent(txtConsumoAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
-                        .addGap(88, 88, 88)
+                            .addComponent(txtConsumoID, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(txtConsumoAsesor))
+                        .addGap(80, 80, 80)
                         .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelConsumoLayout.createSequentialGroup()
                                 .addComponent(lblConsumoTasa)
@@ -543,7 +551,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblConsumoID)
                     .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoAsesor)
                     .addComponent(lblConsumoTasa)
@@ -584,6 +592,11 @@ public class TabbedPane extends javax.swing.JFrame {
         btnLibranzaEditar.setText("Editar");
 
         btnLibranzaBorrar.setText("Borrar");
+        btnLibranzaBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibranzaBorrarActionPerformed(evt);
+            }
+        });
 
         btnLibranzaCancelar.setText("Cancelar");
 
@@ -698,6 +711,11 @@ public class TabbedPane extends javax.swing.JFrame {
         btnUsuarioEditar.setText("Editar");
 
         btnUsuarioBorrar.setText("Borrar");
+        btnUsuarioBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioBorrarActionPerformed(evt);
+            }
+        });
 
         Cancelar.setText("Cancelar");
 
@@ -844,6 +862,11 @@ public class TabbedPane extends javax.swing.JFrame {
                 btnAsesorBorrarMouseClicked(evt);
             }
         });
+        btnAsesorBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsesorBorrarActionPerformed(evt);
+            }
+        });
 
         btnAsesorCancelar.setText("Cancelar");
 
@@ -941,7 +964,14 @@ public class TabbedPane extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCampaniaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaAgregarActionPerformed
-        // TODO add your handling code here:
+        Campania campaniaAgre = new Campania(0, txtCampaniaDescripcion.getText());
+        CampaniaDAO campaniaDAO = new CampaniaDAO();
+        campaniaDAO.AgregarCampania(campaniaAgre);
+        iniciarVista();
+        txtCampaniaID.setText("");
+        txtCampaniaDescripcion.setText("");
+
+
     }//GEN-LAST:event_btnCampaniaAgregarActionPerformed
 
     private void txtConsumoIDCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsumoIDCaActionPerformed
@@ -1019,11 +1049,12 @@ public class TabbedPane extends javax.swing.JFrame {
     private void tblLibranzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLibranzaMouseClicked
         if (evt.getClickCount() == 1) {
             JTable receptor = (JTable) evt.getSource();
+            txtLibranzaID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             txtLibranzaIDCa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
             txtLibranzaEmpresa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtLibranzaPlazo.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
             txtLibranzaTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
-
+            btnLibranzaBorrar.setEnabled(true);
         }
     }//GEN-LAST:event_tblLibranzaMouseClicked
 
@@ -1037,7 +1068,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtUsuarioCelular.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
             txtUsuarioContrasena.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
             txtUsuarioFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 6).toString());
-
+            this.usuarioAliasActual = (receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
+            btnUsuarioBorrar.setEnabled(true);
         }
     }//GEN-LAST:event_tblUsuarioMouseClicked
 
@@ -1048,6 +1080,7 @@ public class TabbedPane extends javax.swing.JFrame {
             txtAsesorNombres.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
             txtAsesorApellidos.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtAsesorSucursal.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
+            btnAsesorBorrar.setEnabled(true);
 
         }
     }//GEN-LAST:event_tblAsesorMouseClicked
@@ -1103,6 +1136,62 @@ public class TabbedPane extends javax.swing.JFrame {
         btnConsumoBorrar.setEnabled(false);
     }//GEN-LAST:event_btnConsumoBorrarActionPerformed
 
+    private void btnLibranzaBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibranzaBorrarActionPerformed
+        int idlibranza = Integer.parseInt(txtLibranzaID.getText());
+        LibranzaDAO libranzaDAO = new LibranzaDAO();
+        libranzaDAO.EliminarLibranza(idlibranza);
+        iniciarVista();
+        txtLibranzaID.setText("");
+        txtLibranzaEmpresa.setText("");
+        txtLibranzaIDCa.setText("");
+        txtLibranzaPlazo.setText("");
+        txtLibranzaTasa.setText("");
+
+        btnLibranzaBorrar.setEnabled(false);
+
+
+    }//GEN-LAST:event_btnLibranzaBorrarActionPerformed
+
+    private void btnUsuarioBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioBorrarActionPerformed
+        // String AliasUsuario = txtUsuarioAlias.getText();
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.EliminarUsuario(usuarioAliasActual);
+        iniciarVista();
+        txtUsuarioAlias.setText("");
+        txtUsuarioNombres.setText("");
+        txtUsuarioApellidos.setText("");
+        txtUsuarioCelular.setText("");
+        txtUsuarioContrasena.setText("");
+
+        txtUsuarioEmail.setText("");
+        txtUsuarioFecha.setText("");
+
+        btnUsuarioBorrar.setEnabled(false);
+
+
+    }//GEN-LAST:event_btnUsuarioBorrarActionPerformed
+
+    private void btnAsesorBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsesorBorrarActionPerformed
+        int idAsesor = Integer.parseInt(txtAsesorID.getText());
+        AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
+
+        asesorComercialDAO.EliminaAsesorComercial(idAsesor);
+        iniciarVista();
+        txtAsesorID.setText("");
+        txtAsesorApellidos.setText("");
+        txtAsesorNombres.setText("");
+        txtAsesorSucursal.setText("");
+        btnAsesorBorrar.setEnabled(false);
+
+
+    }//GEN-LAST:event_btnAsesorBorrarActionPerformed
+
+    private void btnCampaniaCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaCancelarActionPerformed
+        txtCampaniaID.setText("");
+        txtCampaniaDescripcion.setText("");
+        btnCampaniaBorrar.setEnabled(false);
+    }//GEN-LAST:event_btnCampaniaCancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1141,28 +1230,28 @@ public class TabbedPane extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
     private javax.swing.JButton brnCampaniaAplicadaAgregar;
-    private javax.swing.JButton brnCampaniaAplicadaBorrar;
+    public javax.swing.JButton brnCampaniaAplicadaBorrar;
     private javax.swing.JButton brnCampaniaAplicadaCancelar;
     private javax.swing.JButton brnCampaniaAplicadaEditar;
     private javax.swing.JButton btnAsesorAgregar;
-    private javax.swing.JButton btnAsesorBorrar;
+    public javax.swing.JButton btnAsesorBorrar;
     private javax.swing.JButton btnAsesorCancelar;
     private javax.swing.JButton btnAsesorEditar;
     private javax.swing.JButton btnCampaniaAgregar;
-    private javax.swing.JButton btnCampaniaBorrar;
+    public javax.swing.JButton btnCampaniaBorrar;
     private javax.swing.JButton btnCampaniaCancelar;
     private javax.swing.JButton btnCampaniaEditar;
     private javax.swing.JButton btnConsumoAgregar;
-    private javax.swing.JButton btnConsumoBorrar;
+    public javax.swing.JButton btnConsumoBorrar;
     private javax.swing.JButton btnConsumoCancelar;
     private javax.swing.JButton btnConsumoEditar;
     private javax.swing.JButton btnGeneralActualizar;
     private javax.swing.JButton btnLibranzaAgregar;
-    private javax.swing.JButton btnLibranzaBorrar;
+    public javax.swing.JButton btnLibranzaBorrar;
     private javax.swing.JButton btnLibranzaCancelar;
     private javax.swing.JButton btnLibranzaEditar;
     private javax.swing.JButton btnUsuarioAgregar;
-    private javax.swing.JButton btnUsuarioBorrar;
+    public javax.swing.JButton btnUsuarioBorrar;
     private javax.swing.JButton btnUsuarioEditar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
@@ -1232,7 +1321,7 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JTextField txtConsumoIDCa;
     private javax.swing.JTextField txtConsumoTasa;
     private javax.swing.JTextField txtLibranzaEmpresa;
-    private javax.swing.JTextField txtLibranzaID;
+    public javax.swing.JTextField txtLibranzaID;
     private javax.swing.JTextField txtLibranzaIDCa;
     private javax.swing.JTextField txtLibranzaPlazo;
     private javax.swing.JTextField txtLibranzaTasa;
@@ -1247,128 +1336,6 @@ public class TabbedPane extends javax.swing.JFrame {
 
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/icon.png")));
-    }
-
-    public void iniciarVista() {
-
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        this.tblResultadosUsuaros = tblUsuario;
-        this.tblResultadoscampania = tblCampania;
-        this.tblResultadoscampaniasAplicadas = tblCampaniaAplicada;
-        this.tblResultadoConsumo = tblConsumo;
-        this.tblResultadoAsesor = tblAsesor;
-        this.tblResultadolibraza = tblLibranza;
-        this.tblResultadoGeneral = tblGeneral1;
-        this.tblResultadoGeneral2 = tblGeneral2;
-
-        InitialData initialData = new InitialData();
-
-        this.setTblResultadosGeneral2(initialData.getConsultaLibranza());
-        this.setTblResultadosGeneral(initialData.getConsultaConsumo());
-        this.setTblResultadosConsumo(initialData.getConsumos());
-        this.setTblResultadosCampanias(initialData.getCampanias());
-        this.setTblResultadosCampaniasAplicadas(initialData.getCampaniasAplicadas());
-        this.setTblResultadosUsuario(initialData.getUsuarios());
-        this.setTblResultadosAsesor(initialData.getAsesores());
-        this.setTblResultadoslibranza(initialData.getLibranzas());
-
-        btnCampaniaBorrar.setEnabled(false);
-        brnCampaniaAplicadaBorrar.setEnabled(false);
-        btnConsumoBorrar.setEnabled(false);
-
-    }
-
-    public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
-        String[] headers = {"Alias", "Nombre", "Apellido", "Email", "Celular", "Clave", "Fecha de nacimiento"};
-        this.tblResultadosUsuaros.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadosUsuaros.setModel(tableModel);
-        for (int i = 0; i < usuarioModelBLs.size(); i++) {
-            tableModel.addRow(usuarioModelBLs.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadosCampanias(ArrayList<Campania> campanias) {
-        String[] headers = {"ID", "DESCRIPCION"};
-        this.tblResultadoscampania.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoscampania.setModel(tableModel);
-        for (int i = 0; i < campanias.size(); i++) {
-            tableModel.addRow(campanias.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadosCampaniasAplicadas(ArrayList<CampaniaAplicada> campaniaAplicadas) {
-        String[] headers = {"CRÉDITO No.", "NOMBRE DEL CLIENTE", "CAMPAÑA DESCRISCION", "FECHA DE APLICACION", "ID CAMPAÑA", "ALIAS USARIO"};
-        this.tblResultadoscampaniasAplicadas.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoscampaniasAplicadas.setModel(tableModel);
-        for (int i = 0; i < campaniaAplicadas.size(); i++) {
-            tableModel.addRow(campaniaAplicadas.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadosConsumo(ArrayList<Consumo> consumos) {
-        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR", "ID ASESOR", "ID CAMPAÑIA"};
-        this.tblResultadoConsumo.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoConsumo.setModel(tableModel);
-        for (int i = 0; i < consumos.size(); i++) {
-            tableModel.addRow(consumos.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadosAsesor(ArrayList<AsesorComercial> asesorComercials) {
-        String[] headers = {"ID", "NOMBRE", "APELLIDO", "SURCUSAL BANCARIA"};
-        this.tblResultadoAsesor.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoAsesor.setModel(tableModel);
-        for (int i = 0; i < asesorComercials.size(); i++) {
-            tableModel.addRow(asesorComercials.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
-        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES", "ID CAMPAÑA"};
-        this.tblResultadolibraza.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadolibraza.setModel(tableModel);
-        for (int i = 0; i < libranzas.size(); i++) {
-            tableModel.addRow(libranzas.get(i).toArray());
-        }
-    }
-
-    public void setTblResultadosGeneral(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "NOMBRE DE ASESOR", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
-        this.tblResultadoGeneral.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoGeneral.setModel(tableModel);
-        for (int i = 0; i < general.size(); i++) {
-            tableModel.addRow(general.get(i).toArrayconsumo());
-        }
-    }
-
-    public void setTblResultadosGeneral2(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "EMPREZA", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
-        this.tblResultadoGeneral2.removeAll();
-        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers(headers);
-        this.tblResultadoGeneral2.setModel(tableModel);
-        for (int i = 0; i < general.size(); i++) {
-            tableModel.addRow(general.get(i).toArraylibranza());
-        }
     }
 
 }

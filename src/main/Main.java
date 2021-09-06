@@ -15,10 +15,11 @@ public class Main {
      */
     public static void main(String[] args) {
         TabbedPane InterfasPane = new TabbedPane();
-        /*
-        ControlerIntefazTabla controv = new ControlerIntefazTabla(InterfasPane);
+    /*
+        ControlerIntefazTabla controv = new ControlerIntefazTabla();
         controv.iniciarVista();
-        */
+       */
+       
         InterfasPane.setVisible(true);
     }
     
