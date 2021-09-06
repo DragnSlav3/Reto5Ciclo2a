@@ -228,11 +228,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane2" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnCampaniaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCampaniaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCampaniaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCampaniaCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnCampaniaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCampaniaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCampaniaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCampaniaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -244,7 +244,7 @@
                               <Component id="lblCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="149" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -280,6 +280,7 @@
                 <Component class="javax.swing.JButton" name="btnCampaniaAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCampaniaAgregarActionPerformed"/>
@@ -288,11 +289,13 @@
                 <Component class="javax.swing.JButton" name="btnCampaniaEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnCampaniaBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCampaniaBorrarMouseClicked"/>
@@ -305,6 +308,7 @@
                 <Component class="javax.swing.JButton" name="btnCampaniaCancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCampaniaCancelarActionPerformed"/>
@@ -382,11 +386,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane3" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="brnCampaniaAplicadaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="brnCampaniaAplicadaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="brnCampaniaAplicadaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="brnCampaniaAplicadaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="brnCampaniaAplicadaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -408,7 +412,7 @@
                               <Component id="lblCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -444,6 +448,7 @@
                 <Component class="javax.swing.JButton" name="brnCampaniaAplicadaAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brnCampaniaAplicadaAgregarActionPerformed"/>
@@ -452,11 +457,13 @@
                 <Component class="javax.swing.JButton" name="brnCampaniaAplicadaEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="brnCampaniaAplicadaBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brnCampaniaAplicadaBorrarActionPerformed"/>
@@ -468,6 +475,7 @@
                 <Component class="javax.swing.JButton" name="brnCampaniaAplicadaCancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCampaniaAplicadaID">
@@ -566,11 +574,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane4" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnConsumoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnConsumoAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnConsumoBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnConsumoCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnConsumoAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnConsumoCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnConsumoBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnConsumoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -579,7 +587,7 @@
                               <Component id="lblConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="107" max="32767" attributes="0"/>
+                          <EmptySpace pref="108" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblConsumoAsesor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblConsumoTasa" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -624,6 +632,7 @@
                 <Component class="javax.swing.JButton" name="btnConsumoAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsumoAgregarActionPerformed"/>
@@ -632,11 +641,13 @@
                 <Component class="javax.swing.JButton" name="btnConsumoEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnConsumoBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsumoBorrarActionPerformed"/>
@@ -648,6 +659,7 @@
                 <Component class="javax.swing.JButton" name="btnConsumoCancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblConsumoIDCa">
@@ -762,11 +774,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane5" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnLibranzaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnLibranzaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnLibranzaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnLibranzaCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnLibranzaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLibranzaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLibranzaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLibranzaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -775,7 +787,7 @@
                               <Component id="lblLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="107" max="32767" attributes="0"/>
+                          <EmptySpace pref="108" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblLibranzaEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -820,6 +832,7 @@
                 <Component class="javax.swing.JButton" name="btnLibranzaAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLibranzaAgregarActionPerformed"/>
@@ -828,11 +841,13 @@
                 <Component class="javax.swing.JButton" name="btnLibranzaEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnLibranzaBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLibranzaBorrarActionPerformed"/>
@@ -844,6 +859,7 @@
                 <Component class="javax.swing.JButton" name="btnLibranzaCancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLibranzaIDCa">
@@ -980,11 +996,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane6" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnUsuarioAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUsuarioEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUsuarioBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnUsuarioBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnUsuarioEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnUsuarioAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -998,7 +1014,7 @@
                               <Component id="lblUsuarioApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="74" max="32767" attributes="0"/>
+                          <EmptySpace pref="75" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtUsuarioCelular" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblUsuarioCelular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1048,6 +1064,7 @@
                 <Component class="javax.swing.JButton" name="btnUsuarioAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuarioAgregarActionPerformed"/>
@@ -1056,11 +1073,13 @@
                 <Component class="javax.swing.JButton" name="btnUsuarioEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnUsuarioBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuarioBorrarActionPerformed"/>
@@ -1072,6 +1091,7 @@
                 <Component class="javax.swing.JButton" name="Cancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblUsuarioAlias">
@@ -1186,11 +1206,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane7" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnAsesorAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAsesorEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAsesorBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAsesorCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnAsesorAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAsesorCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAsesorBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAsesorEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1204,7 +1224,7 @@
                               <Component id="txtAsesorNombres" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="87" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblAsesorSucursal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorSucursal" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1245,6 +1265,7 @@
                 <Component class="javax.swing.JButton" name="btnAsesorAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsesorAgregarActionPerformed"/>
@@ -1253,11 +1274,13 @@
                 <Component class="javax.swing.JButton" name="btnAsesorEditar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Editar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnAsesorBorrar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAsesorBorrarMouseClicked"/>
@@ -1270,6 +1293,7 @@
                 <Component class="javax.swing.JButton" name="btnAsesorCancelar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblAsesorID">

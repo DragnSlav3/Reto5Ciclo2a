@@ -252,6 +252,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblCampania);
 
         btnCampaniaAgregar.setText("Agregar");
+        btnCampaniaAgregar.setFocusPainted(false);
         btnCampaniaAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCampaniaAgregarActionPerformed(evt);
@@ -259,8 +260,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnCampaniaEditar.setText("Editar");
+        btnCampaniaEditar.setFocusPainted(false);
 
         btnCampaniaBorrar.setText("Borrar");
+        btnCampaniaBorrar.setFocusPainted(false);
         btnCampaniaBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCampaniaBorrarMouseClicked(evt);
@@ -273,6 +276,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnCampaniaCancelar.setText("Cancelar");
+        btnCampaniaCancelar.setFocusPainted(false);
         btnCampaniaCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCampaniaCancelarActionPerformed(evt);
@@ -318,11 +322,11 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(panelCampaniaLayout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCampaniaAgregar)
-                    .addComponent(btnCampaniaEditar)
+                .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCampaniaCancelar)
                     .addComponent(btnCampaniaBorrar)
-                    .addComponent(btnCampaniaCancelar))
+                    .addComponent(btnCampaniaEditar)
+                    .addComponent(btnCampaniaAgregar))
                 .addGap(18, 18, 18)
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaID)
@@ -331,7 +335,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaDescripcion)
                     .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 149, Short.MAX_VALUE))
+                .addGap(0, 150, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña", panelCampania);
@@ -355,6 +359,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblCampaniaAplicada);
 
         brnCampaniaAplicadaAgregar.setText("Agregar");
+        brnCampaniaAplicadaAgregar.setFocusPainted(false);
         brnCampaniaAplicadaAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brnCampaniaAplicadaAgregarActionPerformed(evt);
@@ -362,8 +367,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         brnCampaniaAplicadaEditar.setText("Editar");
+        brnCampaniaAplicadaEditar.setFocusPainted(false);
 
         brnCampaniaAplicadaBorrar.setText("Borrar");
+        brnCampaniaAplicadaBorrar.setFocusPainted(false);
         brnCampaniaAplicadaBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brnCampaniaAplicadaBorrarActionPerformed(evt);
@@ -371,6 +378,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         brnCampaniaAplicadaCancelar.setText("Cancelar");
+        brnCampaniaAplicadaCancelar.setFocusPainted(false);
 
         lblCampaniaAplicadaID.setText("ID:");
 
@@ -419,11 +427,11 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brnCampaniaAplicadaEditar)
+                .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(brnCampaniaAplicadaCancelar)
                     .addComponent(brnCampaniaAplicadaBorrar)
-                    .addComponent(brnCampaniaAplicadaAgregar)
-                    .addComponent(brnCampaniaAplicadaCancelar))
+                    .addComponent(brnCampaniaAplicadaEditar)
+                    .addComponent(brnCampaniaAplicadaAgregar))
                 .addGap(17, 17, 17)
                 .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaAplicadaID)
@@ -440,7 +448,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaAplicadaFecha)
                     .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 63, Short.MAX_VALUE))
+                .addGap(0, 64, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña aplicada", panelCampaniaAplicada);
@@ -464,6 +472,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane4.setViewportView(tblConsumo);
 
         btnConsumoAgregar.setText("Agregar");
+        btnConsumoAgregar.setFocusPainted(false);
         btnConsumoAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsumoAgregarActionPerformed(evt);
@@ -471,8 +480,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnConsumoEditar.setText("Editar");
+        btnConsumoEditar.setFocusPainted(false);
 
         btnConsumoBorrar.setText("Borrar");
+        btnConsumoBorrar.setFocusPainted(false);
         btnConsumoBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsumoBorrarActionPerformed(evt);
@@ -480,6 +491,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnConsumoCancelar.setText("Cancelar");
+        btnConsumoCancelar.setFocusPainted(false);
 
         lblConsumoIDCa.setText("ID campaña:");
 
@@ -550,18 +562,18 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(panelConsumoLayout.createSequentialGroup()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConsumoEditar)
+                .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnConsumoAgregar)
+                    .addComponent(btnConsumoCancelar)
                     .addComponent(btnConsumoBorrar)
-                    .addComponent(btnConsumoCancelar))
+                    .addComponent(btnConsumoEditar))
                 .addGap(28, 28, 28)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoCuotas)
                     .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblConsumoID)
                     .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoAsesor)
                     .addComponent(lblConsumoTasa)
@@ -593,6 +605,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane5.setViewportView(tblLibranza);
 
         btnLibranzaAgregar.setText("Agregar");
+        btnLibranzaAgregar.setFocusPainted(false);
         btnLibranzaAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibranzaAgregarActionPerformed(evt);
@@ -600,8 +613,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnLibranzaEditar.setText("Editar");
+        btnLibranzaEditar.setFocusPainted(false);
 
         btnLibranzaBorrar.setText("Borrar");
+        btnLibranzaBorrar.setFocusPainted(false);
         btnLibranzaBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLibranzaBorrarActionPerformed(evt);
@@ -609,6 +624,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnLibranzaCancelar.setText("Cancelar");
+        btnLibranzaCancelar.setFocusPainted(false);
 
         lblLibranzaIDCa.setText("ID campaña:");
 
@@ -669,18 +685,18 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLibranzaAgregar)
-                    .addComponent(btnLibranzaEditar)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLibranzaCancelar)
                     .addComponent(btnLibranzaBorrar)
-                    .addComponent(btnLibranzaCancelar))
+                    .addComponent(btnLibranzaEditar)
+                    .addComponent(btnLibranzaAgregar))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaPlazo)
                     .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaID)
                     .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaEmpresa)
                     .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -712,6 +728,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane6.setViewportView(tblUsuario);
 
         btnUsuarioAgregar.setText("Agregar");
+        btnUsuarioAgregar.setFocusPainted(false);
         btnUsuarioAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuarioAgregarActionPerformed(evt);
@@ -719,8 +736,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnUsuarioEditar.setText("Editar");
+        btnUsuarioEditar.setFocusPainted(false);
 
         btnUsuarioBorrar.setText("Borrar");
+        btnUsuarioBorrar.setFocusPainted(false);
         btnUsuarioBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuarioBorrarActionPerformed(evt);
@@ -728,6 +747,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         Cancelar.setText("Cancelar");
+        Cancelar.setFocusPainted(false);
 
         lblUsuarioAlias.setText("Alias:");
 
@@ -812,11 +832,11 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(panelUsuarioLayout.createSequentialGroup()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuarioAgregar)
-                    .addComponent(btnUsuarioEditar)
+                .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUsuarioBorrar)
-                    .addComponent(Cancelar))
+                    .addComponent(btnUsuarioEditar)
+                    .addComponent(Cancelar)
+                    .addComponent(btnUsuarioAgregar))
                 .addGap(21, 21, 21)
                 .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuarioAlias)
@@ -827,7 +847,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtUsuarioNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioApellidos)
                     .addComponent(txtUsuarioApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuarioCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioCelular)
@@ -863,6 +883,7 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane7.setViewportView(tblAsesor);
 
         btnAsesorAgregar.setText("Agregar");
+        btnAsesorAgregar.setFocusPainted(false);
         btnAsesorAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAsesorAgregarActionPerformed(evt);
@@ -870,8 +891,10 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnAsesorEditar.setText("Editar");
+        btnAsesorEditar.setFocusPainted(false);
 
         btnAsesorBorrar.setText("Borrar");
+        btnAsesorBorrar.setFocusPainted(false);
         btnAsesorBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAsesorBorrarMouseClicked(evt);
@@ -884,6 +907,7 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnAsesorCancelar.setText("Cancelar");
+        btnAsesorCancelar.setFocusPainted(false);
 
         lblAsesorID.setText("ID:");
 
@@ -936,11 +960,11 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(panelAsesorLayout.createSequentialGroup()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAsesorAgregar)
-                    .addComponent(btnAsesorEditar)
+                    .addComponent(btnAsesorCancelar)
                     .addComponent(btnAsesorBorrar)
-                    .addComponent(btnAsesorCancelar))
+                    .addComponent(btnAsesorEditar))
                 .addGap(25, 25, 25)
                 .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAsesorID)
@@ -951,7 +975,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(lblAsesorApellidos)
                     .addComponent(txtAsesorNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAsesorApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAsesorSucursal)
                     .addComponent(txtAsesorSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
