@@ -95,7 +95,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
-        String[] headers = {"Alias", "Nombre", "Apellido", "Email", "Celular", "Clave", "Fecha de nacimiento"};
+        String[] headers = {"Alias", "Nombres", "Apellidos", "Email", "Celular", "Clave", "Fecha de nacimiento"};
         this.tblResultadosUsuaros.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -106,7 +106,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosCampanias(ArrayList<Campania> campanias) {
-        String[] headers = {"ID", "DESCRIPCION"};
+        String[] headers = {"ID", "Descripción"};
         this.tblResultadoscampania.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -117,7 +117,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosCampaniasAplicadas(ArrayList<CampaniaAplicada> campaniaAplicadas) {
-        String[] headers = {"CRÉDITO No.", "NOMBRE DEL CLIENTE", "CAMPAÑA DESCRISCION", "FECHA DE APLICACION", "ID CAMPAÑA", "ALIAS USARIO"};
+        String[] headers = {"Crédito No.", "Nombre usuario", "Descripción campaña", "Fecha de aplicación", "ID campaña", "Alias usuario"};
         this.tblResultadoscampaniasAplicadas.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -128,7 +128,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosConsumo(ArrayList<Consumo> consumos) {
-        String[] headers = {"ID", "DESCRIPCION DE CAMPAÑA", "CUOTAS", "TASA DE INTERES", "NOMBRE DEL ASESOR", "ID ASESOR", "ID CAMPAÑIA"};
+        String[] headers = {"ID", "Descripción campaña", "Cuotas", "Tasa de interés", "Nombre asesor", "ID asesor", "ID campaña"};
         this.tblResultadoConsumo.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -139,7 +139,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosAsesor(ArrayList<AsesorComercial> asesorComercials) {
-        String[] headers = {"ID", "NOMBRE", "APELLIDO", "SURCUSAL BANCARIA"};
+        String[] headers = {"ID", "Nombres", "Apellidos", "Sucursal bancaria"};
         this.tblResultadoAsesor.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -150,7 +150,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadoslibranza(ArrayList<Libranza> libranzas) {
-        String[] headers = {"ID", "DESCRPCION DE CAMPAÑA", "EMPRESA", "MESES DE PLAZO", "TAZA DE INTERES", "ID CAMPAÑA"};
+        String[] headers = {"ID", "Descripción campaña", "Empresa", "Meses de plazo", "Tasa de interés", "ID campaña"};
         this.tblResultadolibraza.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -161,7 +161,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosGeneral(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "NOMBRE DE ASESOR", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
+        String[] headers = {"ID", "Nombre usuario", "Descripción campaña", "Nombre asesor", "Fecha aplicación", "Alias usuario", "ID campaña"};
         this.tblResultadoGeneral.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);
@@ -172,7 +172,7 @@ public class ControlerIntefazTabla {
     }
 
     public void setTblResultadosGeneral2(ArrayList<CampaniaAplicada> general) {
-        String[] headers = {"ID", "NOMBRE DE USUARO", "DESCRPCION DE CAMPAÑA", "EMPREZA", "FECHA DE APLICACION ", "ALIAS DE USUARIO", "ID CAMPAÑA"};
+        String[] headers = {"ID", "Nombre usuario", "Descripción campaña", "Empresa", "Fecha aplicación", "Alias usuario", "ID campaña"};
         this.tblResultadoGeneral2.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(headers);

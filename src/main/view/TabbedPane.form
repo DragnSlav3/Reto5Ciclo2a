@@ -191,7 +191,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="0" pref="645" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -205,18 +205,19 @@
                                   <Component id="btnCampaniaCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCampaniaID" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaDescripcion" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Component id="lblCampaniaID" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblCampaniaDescripcion" pref="72" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtCampaniaDescripcion" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="txtCampaniaID" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="txtCampaniaDescripcion" min="-2" pref="411" max="-2" attributes="0"/>
+                                      <Component id="txtCampaniaID" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -234,7 +235,7 @@
                               <Component id="btnCampaniaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCampaniaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCampaniaID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaID" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -244,7 +245,7 @@
                               <Component id="lblCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="107" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -351,19 +352,17 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblCampaniaAplicadaCod" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaID" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaAlias" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaFecha" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaID" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaAlias" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaFecha" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtCampaniaAplicadaFecha" pref="404" max="32767" attributes="0"/>
+                                      <Component id="txtCampaniaAplicadaCod" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtCampaniaAplicadaAlias" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="txtCampaniaAplicadaCod" alignment="0" pref="100" max="32767" attributes="0"/>
-                                              <Component id="txtCampaniaAplicadaFecha" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtCampaniaAplicadaID" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="txtCampaniaAplicadaID" min="-2" pref="40" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -417,7 +416,7 @@
                               <Component id="lblCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

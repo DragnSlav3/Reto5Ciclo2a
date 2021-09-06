@@ -293,7 +293,7 @@ public class TabbedPane extends javax.swing.JFrame {
         panelCampania.setLayout(panelCampaniaLayout);
         panelCampaniaLayout.setHorizontalGroup(
             panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addGroup(panelCampaniaLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,15 +306,16 @@ public class TabbedPane extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCampaniaCancelar))
                     .addGroup(panelCampaniaLayout.createSequentialGroup()
-                        .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelCampaniaLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(lblCampaniaID))
+                            .addComponent(lblCampaniaDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCampaniaDescripcion)
-                            .addGroup(panelCampaniaLayout.createSequentialGroup()
-                                .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(35, 35, 35))
         );
         panelCampaniaLayout.setVerticalGroup(
@@ -327,7 +328,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(btnCampaniaBorrar)
                     .addComponent(btnCampaniaEditar)
                     .addComponent(btnCampaniaAgregar))
-                .addGap(66, 66, 66)
+                .addGap(35, 35, 35)
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaID)
                     .addComponent(txtCampaniaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -335,7 +336,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaDescripcion)
                     .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 76, Short.MAX_VALUE))
+                .addGap(0, 107, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña", panelCampania);
@@ -400,17 +401,16 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
                         .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCampaniaAplicadaCod)
-                            .addComponent(lblCampaniaAplicadaID, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCampaniaAplicadaAlias, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCampaniaAplicadaFecha, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(lblCampaniaAplicadaID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCampaniaAplicadaAlias)
+                            .addComponent(lblCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                            .addComponent(txtCampaniaAplicadaCod)
                             .addComponent(txtCampaniaAplicadaAlias)
                             .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
-                                .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtCampaniaAplicadaCod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCampaniaAplicadaID, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(txtCampaniaAplicadaID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelCampaniaAplicadaLayout.createSequentialGroup()
@@ -451,7 +451,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaAplicadaFecha)
                     .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
+                .addGap(0, 46, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña aplicada", panelCampaniaAplicada);
