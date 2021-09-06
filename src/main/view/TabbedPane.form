@@ -197,11 +197,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="btnCampaniaAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnCampaniaEditar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnCampaniaBorrar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="125" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnCampaniaCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -227,24 +227,24 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane2" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnCampaniaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCampaniaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCampaniaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCampaniaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCampaniaID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -348,51 +348,56 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblCampaniaAplicadaCod" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaID" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaAlias" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCampaniaAplicadaFecha" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaID" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaAlias" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCampaniaAplicadaFecha" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtCampaniaAplicadaFecha" pref="205" max="32767" attributes="0"/>
-                                      <Component id="txtCampaniaAplicadaCod" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtCampaniaAplicadaAlias" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txtCampaniaAplicadaID" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtCampaniaAplicadaCod" alignment="0" pref="100" max="32767" attributes="0"/>
+                                              <Component id="txtCampaniaAplicadaFecha" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtCampaniaAplicadaID" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="brnCampaniaAplicadaAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="brnCampaniaAplicadaEditar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="brnCampaniaAplicadaBorrar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="brnCampaniaAplicadaBorrar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Component id="brnCampaniaAplicadaCancelar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane3" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" alignment="1" pref="645" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane3" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="brnCampaniaAplicadaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="brnCampaniaAplicadaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="brnCampaniaAplicadaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brnCampaniaAplicadaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brnCampaniaAplicadaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCampaniaAplicadaID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaAplicadaID" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -412,7 +417,7 @@
                               <Component id="lblCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCampaniaAplicadaFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -525,41 +530,41 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="btnConsumoAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnConsumoEditar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnConsumoBorrar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnConsumoCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblConsumoAsesor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblConsumoID" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                          <Component id="lblConsumoID" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblConsumoAsesor" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtConsumoID" pref="72" max="32767" attributes="0"/>
-                                      <Component id="txtConsumoAsesor" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblConsumoTasa" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtConsumoTasa" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblConsumoCuotas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                          <Component id="txtConsumoCuotas" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="txtConsumoID" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <Component id="txtConsumoAsesor" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblConsumoCuotas" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblConsumoTasa" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtConsumoCuotas" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="txtConsumoTasa" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="96" max="32767" attributes="0"/>
                                   <Component id="lblConsumoIDCa" min="-2" pref="80" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtConsumoIDCa" min="-2" pref="60" max="-2" attributes="0"/>
@@ -573,21 +578,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane4" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnConsumoAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnConsumoCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnConsumoBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnConsumoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtConsumoCuotas" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtConsumoID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="108" max="32767" attributes="0"/>
+                          <EmptySpace pref="42" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblConsumoAsesor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblConsumoTasa" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -596,7 +601,7 @@
                               <Component id="lblConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtConsumoIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -726,11 +731,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="btnLibranzaAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnLibranzaEditar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnLibranzaBorrar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnLibranzaCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -738,12 +743,12 @@
                                       <Component id="lblLibranzaEmpresa" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLibranzaID" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtLibranzaEmpresa" min="-2" pref="150" max="-2" attributes="0"/>
                                       <Component id="txtLibranzaID" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="lblLibranzaPlazo" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLibranzaTasa" min="-2" max="-2" attributes="0"/>
@@ -772,21 +777,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane5" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnLibranzaCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLibranzaBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLibranzaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLibranzaAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaPlazo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="108" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblLibranzaEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -795,7 +800,7 @@
                               <Component id="lblLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLibranzaIDCa" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -917,71 +922,69 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane6" alignment="0" pref="645" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="btnUsuarioAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                  <Component id="btnUsuarioEditar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                  <Component id="btnUsuarioBorrar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblUsuarioFecha" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtUsuarioFecha" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtUsuarioContrasena" min="-2" pref="120" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblUsuarioNombres" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblUsuarioAlias" min="-2" pref="34" max="-2" attributes="0"/>
-                                              <Component id="lblUsuarioEmail" min="-2" pref="40" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="txtUsuarioAlias" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtUsuarioEmail" max="32767" attributes="0"/>
-                                              <Component id="txtUsuarioNombres" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                                  <Component id="lblUsuarioCelular" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="lblUsuarioApellidos" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="btnUsuarioAgregar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnUsuarioEditar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnUsuarioBorrar" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="lblUsuarioContrasena" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblUsuarioFecha" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUsuarioFecha" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="lblUsuarioContrasena" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="lblUsuarioNombres" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblUsuarioAlias" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblUsuarioEmail" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="txtUsuarioAlias" min="-2" pref="103" max="-2" attributes="0"/>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="txtUsuarioEmail" max="32767" attributes="0"/>
+                                                              <Component id="txtUsuarioNombres" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                                          <Component id="lblUsuarioApellidos" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtUsuarioContrasena" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="txtUsuarioApellidos" min="-2" pref="150" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="txtUsuarioCelular" min="-2" pref="118" max="-2" attributes="0"/>
-                                      <Component id="txtUsuarioApellidos" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblUsuarioCelular" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtUsuarioCelular" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -989,42 +992,40 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane6" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="btnUsuarioBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="Cancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnUsuarioBorrar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnUsuarioEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btnUsuarioAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblUsuarioAlias" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioAlias" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace pref="28" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblUsuarioNombres" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioNombres" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblUsuarioApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtUsuarioCelular" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblUsuarioCelular" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblUsuarioEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblUsuarioFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblUsuarioContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUsuarioContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1161,8 +1162,9 @@
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblAsesorID" min="-2" pref="34" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="lblAsesorID" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtAsesorID" min="-2" pref="60" max="-2" attributes="0"/>
                                   <EmptySpace pref="498" max="32767" attributes="0"/>
                               </Group>
@@ -1170,18 +1172,19 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="btnAsesorAgregar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="btnAsesorEditar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="btnAsesorBorrar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="btnAsesorCancelar" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                   <Component id="lblAsesorSucursal" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="txtAsesorSucursal" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
@@ -1190,9 +1193,9 @@
                                                   <Component id="txtAsesorNombres" min="-2" pref="185" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="lblAsesorApellidos" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="lblAsesorApellidos" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="txtAsesorApellidos" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1206,7 +1209,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane7" min="-2" pref="250" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnAsesorAgregar" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -1215,24 +1218,24 @@
                               </Group>
                               <Component id="btnAsesorEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblAsesorID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblAsesorNombres" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblAsesorApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorNombres" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="93" max="32767" attributes="0"/>
+                          <EmptySpace pref="49" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblAsesorSucursal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtAsesorSucursal" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
