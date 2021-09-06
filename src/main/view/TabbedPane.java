@@ -355,6 +355,11 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblCampaniaAplicada);
 
         brnCampaniaAplicadaAgregar.setText("Agregar");
+        brnCampaniaAplicadaAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnCampaniaAplicadaAgregarActionPerformed(evt);
+            }
+        });
 
         brnCampaniaAplicadaEditar.setText("Editar");
 
@@ -459,6 +464,11 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane4.setViewportView(tblConsumo);
 
         btnConsumoAgregar.setText("Agregar");
+        btnConsumoAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsumoAgregarActionPerformed(evt);
+            }
+        });
 
         btnConsumoEditar.setText("Editar");
 
@@ -853,6 +863,11 @@ public class TabbedPane extends javax.swing.JFrame {
         jScrollPane7.setViewportView(tblAsesor);
 
         btnAsesorAgregar.setText("Agregar");
+        btnAsesorAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsesorAgregarActionPerformed(evt);
+            }
+        });
 
         btnAsesorEditar.setText("Editar");
 
@@ -979,7 +994,19 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_txtConsumoIDCaActionPerformed
 
     private void btnLibranzaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibranzaAgregarActionPerformed
-        // TODO add your handling code here:
+        String tassa = txtLibranzaTasa.getText();
+        Libranza libranzaaAgre = new Libranza(0, Integer.parseInt(txtLibranzaIDCa.getText()), " ", txtLibranzaEmpresa.getText(), Integer.parseInt(txtLibranzaPlazo.getText()), (float) Float.parseFloat(tassa));
+        LibranzaDAO libranzaDAO = new LibranzaDAO();
+        libranzaDAO.AgregarLibranza(libranzaaAgre);
+
+        iniciarVista();
+        txtLibranzaID.setText("");
+        txtLibranzaEmpresa.setText("");
+        txtLibranzaIDCa.setText("");
+        txtLibranzaPlazo.setText("");
+        txtLibranzaTasa.setText("");
+
+
     }//GEN-LAST:event_btnLibranzaAgregarActionPerformed
 
     private void txtUsuarioNombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioNombresActionPerformed
@@ -987,22 +1014,20 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioNombresActionPerformed
 
     private void btnUsuarioAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioAgregarActionPerformed
-        // TODO add your handling code here:
+        UsuarioModelBL usuarioModelBL = new UsuarioModelBL(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        usuarioDAO.AgregarGerman("insert into usuario values ('dragnslav3', 'german', 'garcia', 'dragnslav3@gmail.com', '3008281940', 'admin', '21/09/1981');");
+        usuarioDAO.AgregarUsuario(usuarioModelBL);
+        iniciarVista();
+        txtUsuarioAlias.setText("");
+        txtUsuarioNombres.setText("");
+        txtUsuarioApellidos.setText("");
+        txtUsuarioCelular.setText("");
+        txtUsuarioContrasena.setText("");
 
-        /*
-        Connection conn=ConnectionDB.getConnection();
-        
-        
-        
-        try {
-            PreparedStatement prepared = conn.prepareStatement("insert into usuario values ('dragnslav3', 'german', 'garcia', 'dragnslav3@gmail.com', '3008281940', 'admin', '21/09/1981');");
-            prepared.execute();
-            System.out.println("Usuario Agregado");
-        } catch (Exception e) {
-            System.out.println(e);
-        }*/
+        txtUsuarioEmail.setText("");
+        txtUsuarioFecha.setText("");
+
+
     }//GEN-LAST:event_btnUsuarioAgregarActionPerformed
 
     private void tblCampaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCampaniaMouseClicked
@@ -1191,6 +1216,47 @@ public class TabbedPane extends javax.swing.JFrame {
         txtCampaniaDescripcion.setText("");
         btnCampaniaBorrar.setEnabled(false);
     }//GEN-LAST:event_btnCampaniaCancelarActionPerformed
+
+    private void brnCampaniaAplicadaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnCampaniaAplicadaAgregarActionPerformed
+        CampaniaAplicada campaniaAppAgre = new CampaniaAplicada(0, txtCampaniaAplicadaAlias.getText(), "", txtCampaniaAplicadaFecha.getText(), Integer.parseInt(txtCampaniaAplicadaCod.getText()), txtCampaniaAplicadaAlias.getText());
+        CampaniasAppDAO campaniasAppDAO = new CampaniasAppDAO();
+        campaniasAppDAO.AgregarCampaniaApli(campaniaAppAgre);
+        iniciarVista();
+        txtCampaniaAplicadaID.setText("");
+        txtCampaniaAplicadaAlias.setText("");
+        txtCampaniaAplicadaCod.setText("");
+        txtCampaniaAplicadaFecha.setText("");
+
+
+    }//GEN-LAST:event_brnCampaniaAplicadaAgregarActionPerformed
+
+    private void btnConsumoAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumoAgregarActionPerformed
+
+        Consumo consumoAgre = new Consumo(0, Integer.parseInt(txtConsumoIDCa.getText()), Integer.parseInt(txtConsumoCuotas.getText()), (float) Float.parseFloat(txtConsumoTasa.getText()), Integer.parseInt(txtConsumoAsesor.getText()));
+
+        ConsumoDAO consumoDAO = new ConsumoDAO();
+        consumoDAO.AgregarConsumo(consumoAgre);
+        iniciarVista();
+
+        txtConsumoAsesor.setText("");
+        txtConsumoCuotas.setText("");
+        txtConsumoIDCa.setText("");
+        txtConsumoID.setText("");
+        txtConsumoTasa.setText("");
+
+    }//GEN-LAST:event_btnConsumoAgregarActionPerformed
+
+    private void btnAsesorAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsesorAgregarActionPerformed
+        AsesorComercial asesorComercial = new AsesorComercial(5,txtAsesorNombres.getText(), txtAsesorApellidos.getText(), txtAsesorSucursal.getText());
+        AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
+        asesorComercialDAO.AgregarAsesorcomercial(asesorComercial);
+          iniciarVista();
+        txtAsesorID.setText("");
+        txtAsesorApellidos.setText("");
+        txtAsesorNombres.setText("");
+        txtAsesorSucursal.setText("");
+        
+    }//GEN-LAST:event_btnAsesorAgregarActionPerformed
 
     /**
      * @param args the command line arguments

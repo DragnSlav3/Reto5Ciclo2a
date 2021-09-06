@@ -30,7 +30,7 @@ public class LibranzaDAO {
                 conn = ConnectionDB.getConnection();
             }
             String sql = "SELECT lbr_id_PRIMARY as \"LLAVE PRINCIPAL\", campania.cmp_descripcion AS \"DESCRIPCION DE CAMPAÑA\" ,lbr_empresa AS \"EMPRESAS\",lbr_meses_plazo AS \"MESES DE PLAZO\", lbr_tasa_interes AS \"TASA DE INTERES\",lbr_id AS \"ID CAMPAÑA\"\n"
-                    + "FROM libranza join campania on libranza.lbr_id = campania.cmp_id;";
+                    + "FROM libranza join campania on libranza.lbr_id = campania.cmp_id order by  lbr_id_PRIMARY;";
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
             while (resultado.next()) {
@@ -43,37 +43,18 @@ public class LibranzaDAO {
         return creditoLibranza;
     }
 
-    //obtener una libranza espesifica por la llave principal
-    public Libranza obtenerusconsumo(int lbrIdPRIMARY) {
-        Libranza libranzacredi = null;
-        try {
-            if (conn == null) {
-                conn = ConnectionDB.getConnection();
-            }
-            String sql = "SELECT lbr_id_PRIMARY as \"LLAVE PRINCIPAL\", campania.cmp_descripcion AS \"DESCRIPCION DE CAMPAÑA\" ,lbr_empresa AS \"EMPRESAS\",lbr_meses_plazo AS \"MESES DE PLAZO\", lbr_tasa_interes AS \"TASA DE INTERES\",lbr_id AS \"ID CAMPAÑA\"\n"
-                    + "FROM libranza join campania on libranza.lbr_id = campania.cmp_id where lbr_id_PRIMARY = ?;";
-            PreparedStatement consultadatos = conn.prepareStatement(sql);
-            consultadatos.setInt(0, lbrIdPRIMARY);
-            ResultSet resultado = consultadatos.executeQuery();
-              libranzacredi = new Libranza(resultado.getInt(1), resultado.getInt(6), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getFloat(5));
-
-        } catch (SQLException ex) {
-        }
-        return libranzacredi;
-    }
-/*
-    public void AgregarLibranza(Libranza AgregarLibranza) {
+   public void AgregarLibranza(Libranza AgregarLibranza) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "insert into consumo(csm_id , csm_asesor, csm_cuotas, csm_tasa_interes) values (?,?,?,?); ";
+            String sql = "insert  libranza(lbr_id,lbr_empresa,lbr_meses_plazo,lbr_tasa_interes) values (?,?,?,?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setInt(0, Agregarconsu.getCsmId());
-            stadatos.setInt(1, Agregarconsu.getCsmAsesor());
-            stadatos.setInt(2, Agregarconsu.getCsmCuotas());
-            stadatos.setFloat(0, Agregarconsu.getCsmTasaInteres());
+            stadatos.setInt(1, AgregarLibranza.getLbrIdCamapania());
+            stadatos.setString(2,AgregarLibranza.getLbrEmpresa());
+            stadatos.setInt(3, AgregarLibranza.getLbrMesesPlazo());
+            stadatos.setFloat(4,AgregarLibranza.getLbrTasaInteres());
 
             int NumerosRowsInserted = stadatos.executeUpdate();
             //opcional
@@ -85,7 +66,7 @@ public class LibranzaDAO {
         } catch (SQLException ex) {
 
         }
-    }*/
+    }
 
     public void ActualizarConsumo(Consumo Actualizarconsumo) {
         try {

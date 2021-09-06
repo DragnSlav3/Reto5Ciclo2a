@@ -27,7 +27,7 @@ public class ConsumoDAO {
             String sql = "SELECT csm_idprimary as \"LLAVE PRINCIPAL\",campania.cmp_descripcion as \"DESCRPCION DE CAMPAÑA \",concat(asesor_comercial.asr_nombres , concat(\" \", asesor_comercial.asr_apellidos) ) as \"NOMBRE ASESOR\",csm_cuotas AS \"NUMERO DE CUOTAS \",csm_tasa_interes AS \"TASA DE INTERES\" ,\n"
                     + "csm_id as \"ID CAMPAÑA\",csm_asesor as \"ID ASESOR\"FROM consumo\n"
                     + "join campania on consumo.csm_id = campania.cmp_id\n"
-                    + "join asesor_comercial on  consumo.csm_asesor = asesor_comercial.asr_id\n"
+                    + "join asesor_comercial on  consumo.csm_asesor = asesor_comercial.asr_id order by  csm_idprimary\n"
                     + ";";
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
@@ -71,10 +71,10 @@ public class ConsumoDAO {
 
             String sql = "insert into consumo(csm_id , csm_asesor, csm_cuotas, csm_tasa_interes) values (?,?,?,?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setInt(0, Agregarconsu.getCsmId());
-            stadatos.setInt(1, Agregarconsu.getCsmAsesor());
-            stadatos.setInt(2, Agregarconsu.getCsmCuotas());
-            stadatos.setFloat(0, Agregarconsu.getCsmTasaInteres());
+            stadatos.setInt(1, Agregarconsu.getCsmId());
+            stadatos.setInt(2, Agregarconsu.getCsmAsesor());
+            stadatos.setInt(3, Agregarconsu.getCsmCuotas());
+            stadatos.setFloat(4, Agregarconsu.getCsmTasaInteres());
 
             int NumerosRowsInserted = stadatos.executeUpdate();
             //opcional

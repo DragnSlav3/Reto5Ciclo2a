@@ -71,7 +71,7 @@ public class CampaniasAppDAO {
 "                        cpa_campania, cpa_usuario\n" +
 "                        from campania_aplicada\n" +
 "                        join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n" +
-"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id ;\n" +
+"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id order by cpa_app_id;\n" +
 "                        ";
                 Statement statdatosconsul = conn.createStatement();
                 ResultSet resultado = statdatosconsul.executeQuery(sql);
@@ -116,9 +116,9 @@ public class CampaniasAppDAO {
             String sql = "INSERT INTO campania_aplicada (cpa_usuario, cpa_campania, cpa_app_fecha) VALUES (?, ?, ?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
             //stadatos.setInt(1, CampaniasAplicadas.getcpaAppId());
-            stadatos.setString(0, CampaniaAgregar.getCpaUsuario());
-            stadatos.setInt(1, CampaniaAgregar.getIdcpaCampania());
-            stadatos.setString(2, CampaniaAgregar.getCpaAppFecha());
+            stadatos.setString(1, CampaniaAgregar.getCpaUsuario());
+            stadatos.setInt(2, CampaniaAgregar.getIdcpaCampania());
+            stadatos.setString(3, CampaniaAgregar.getCpaAppFecha());
             int NumerosRowsInserted = stadatos.executeUpdate();
             if (NumerosRowsInserted > 0) {
                 System.out.println("Insercion exitosa " + NumerosRowsInserted);

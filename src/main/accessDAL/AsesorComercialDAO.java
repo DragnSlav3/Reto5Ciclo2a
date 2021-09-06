@@ -111,9 +111,9 @@ public class AsesorComercialDAO {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "insert into asesor_comercial(asr_id, asr_nombres, asr_apellidos, asr_surcusal_bancaria) values (?, ?, ?, ?) ";
+            String sql = "insert into asesor_comercial(asr_nombres, asr_apellidos, asr_surcusal_bancaria) values (?, ?, ?);";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setInt(0, AgregaraAsesorC.getAsrId());
+            
             stadatos.setString(1, AgregaraAsesorC.getAsrNombres());
             stadatos.setString(2, AgregaraAsesorC.getAsrApellidos());
             stadatos.setString(3, AgregaraAsesorC.getAsrSucursalBancaria());
