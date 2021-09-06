@@ -66,9 +66,10 @@ public class TabbedPane extends javax.swing.JFrame {
         panelGeneral = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGeneral1 = new javax.swing.JTable();
-        btnGeneralActualizar = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         tblGeneral2 = new javax.swing.JTable();
+        lblGeneral1 = new javax.swing.JLabel();
+        lblGeneral2 = new javax.swing.JLabel();
         panelCampania = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCampania = new javax.swing.JTable();
@@ -186,8 +187,6 @@ public class TabbedPane extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGeneral1);
 
-        btnGeneralActualizar.setText("Actualizar");
-
         tblGeneral2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -201,6 +200,12 @@ public class TabbedPane extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(tblGeneral2);
 
+        lblGeneral1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblGeneral1.setText("Créditos de consumo aprobados");
+
+        lblGeneral2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblGeneral2.setText("Créditos de libranza aprobados");
+
         javax.swing.GroupLayout panelGeneralLayout = new javax.swing.GroupLayout(panelGeneral);
         panelGeneral.setLayout(panelGeneralLayout);
         panelGeneralLayout.setHorizontalGroup(
@@ -208,19 +213,22 @@ public class TabbedPane extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addComponent(jScrollPane8)
             .addGroup(panelGeneralLayout.createSequentialGroup()
-                .addGap(278, 278, 278)
-                .addComponent(btnGeneralActualizar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblGeneral1)
+                    .addComponent(lblGeneral2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelGeneralLayout.setVerticalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGeneralLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(lblGeneral1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGeneralActualizar)
-                .addGap(6, 6, 6))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblGeneral2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Vista general", panelGeneral);
@@ -323,7 +331,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaDescripcion)
                     .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 139, Short.MAX_VALUE))
+                .addGap(0, 149, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña", panelCampania);
@@ -432,7 +440,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaAplicadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaAplicadaFecha)
                     .addComponent(txtCampaniaAplicadaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 53, Short.MAX_VALUE))
+                .addGap(0, 63, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña aplicada", panelCampaniaAplicada);
@@ -553,7 +561,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtConsumoCuotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblConsumoID)
                     .addComponent(txtConsumoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addGroup(panelConsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConsumoAsesor)
                     .addComponent(lblConsumoTasa)
@@ -672,7 +680,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtLibranzaPlazo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLibranzaID)
                     .addComponent(txtLibranzaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLibranzaEmpresa)
                     .addComponent(txtLibranzaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -819,7 +827,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(txtUsuarioNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioApellidos)
                     .addComponent(txtUsuarioApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuarioCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsuarioCelular)
@@ -943,7 +951,7 @@ public class TabbedPane extends javax.swing.JFrame {
                     .addComponent(lblAsesorApellidos)
                     .addComponent(txtAsesorNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAsesorApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(panelAsesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAsesorSucursal)
                     .addComponent(txtAsesorSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -964,7 +972,7 @@ public class TabbedPane extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblFondo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelLibranza, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+                .addComponent(panelLibranza))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1314,7 +1322,6 @@ public class TabbedPane extends javax.swing.JFrame {
     public javax.swing.JButton btnConsumoBorrar;
     private javax.swing.JButton btnConsumoCancelar;
     private javax.swing.JButton btnConsumoEditar;
-    private javax.swing.JButton btnGeneralActualizar;
     private javax.swing.JButton btnLibranzaAgregar;
     public javax.swing.JButton btnLibranzaBorrar;
     private javax.swing.JButton btnLibranzaCancelar;
@@ -1348,6 +1355,8 @@ public class TabbedPane extends javax.swing.JFrame {
     private javax.swing.JLabel lblConsumoIDCa;
     private javax.swing.JLabel lblConsumoTasa;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblGeneral1;
+    private javax.swing.JLabel lblGeneral2;
     private javax.swing.JLabel lblLibranzaEmpresa;
     private javax.swing.JLabel lblLibranzaID;
     private javax.swing.JLabel lblLibranzaIDCa;
