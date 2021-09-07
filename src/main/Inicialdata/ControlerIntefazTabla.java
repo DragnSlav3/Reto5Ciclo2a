@@ -33,11 +33,10 @@ public class ControlerIntefazTabla {
     private JTable tblResultadoGeneral2;
 
     public ControlerIntefazTabla(TabbedPane tabbedPane) {
-     
+
         this.interfaz = tabbedPane;
 
     }
-
 
     public void iniciarVista() {
 
@@ -57,8 +56,8 @@ public class ControlerIntefazTabla {
         this.tblResultadolibraza = interfaz.tblLibranza;
         this.tblResultadoGeneral = interfaz.tblGeneral1;
         this.tblResultadoGeneral2 = interfaz.tblGeneral2;
-        
-         try {
+
+        try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,7 +89,18 @@ public class ControlerIntefazTabla {
         interfaz.btnLibranzaBorrar.setEnabled(false);
         interfaz.btnUsuarioBorrar.setEnabled(false);
         interfaz.btnAsesorBorrar.setEnabled(false);
-        
+        interfaz.btnCampaniaEditar.setEnabled(false);
+        interfaz.btnCampaniaAgregar.setEnabled(true);
+        interfaz.brnCampaniaAplicadaAgregar.setEnabled(true);
+        interfaz.brnCampaniaAplicadaEditar.setEnabled(false);
+        interfaz.btnConsumoEditar.setEnabled(false);
+        interfaz.btnConsumoAgregar.setEnabled(true);
+        interfaz.btnLibranzaAgregar.setEnabled(true);
+        interfaz.btnLibranzaEditar.setEnabled(false);
+        interfaz.btnUsuarioAgregar.setEnabled(true);
+        interfaz.btnUsuarioEditar.setEnabled(false);
+        interfaz.btnAsesorAgregar.setEnabled(true);
+        interfaz.btnAsesorEditar.setEnabled(false);
 
     }
 
