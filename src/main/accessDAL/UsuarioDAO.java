@@ -72,7 +72,7 @@ public class UsuarioDAO {
 
             if (tipNoA == 1) {
                 //busqueda por nombre
-                System.out.println("hola m");
+                //System.out.println("hola m");
                 String sql = "select usr_alias AS \"ALIAS\", usr_nombres AS \"NOMBRES\", usr_apellidos AS \"APELLIDOS\", usr_email AS \"CORREO ELECTRONICO\", usr_celular AS \"CELULAR\", usr_clave AS \"CLAVE\", usr_fecha_nto AS \"FECHA DE NACIMIENTO\" from usuario\n"
                         + "where usuario.usr_nombres like \"%" + consulta + "%\"\n"
                         + ";";
@@ -137,7 +137,7 @@ public class UsuarioDAO {
         }
     }
 
-    public void ActualizarUsuario(UsuarioModelBL usuarioActualizar) {
+    public void ActualizarUsuario(UsuarioModelBL usuarioActualizar, String aliasActual) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -151,7 +151,7 @@ public class UsuarioDAO {
             stadatosActualiza.setString(5, usuarioActualizar.getUsrCelular());
             stadatosActualiza.setString(6, usuarioActualizar.getUsrClave());
             stadatosActualiza.setString(7, usuarioActualizar.getUsrFechaNto());
-            stadatosActualiza.setString(8, usuarioActualizar.getUsrAlias());
+            stadatosActualiza.setString(8, aliasActual);
 
             int resulconsul = stadatosActualiza.executeUpdate();
             //OPCIONAL 

@@ -33,7 +33,7 @@ public class CampaniaDAO {
             String sql = "select cmp_id, cmp_descripcion from campania;";
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
-            System.out.println("HOLA");
+           // System.out.println("HOLA");
             while (resultado.next()) {
                 Campania camApp = new Campania(resultado.getInt(1), resultado.getString(2));
                 campania.add(camApp);
@@ -169,9 +169,9 @@ public class CampaniaDAO {
             
            String sql = "UPDATE campania SET cmp_id = ? , cmp_descripcion = ? WHERE cmp_id = ?;";
            PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-           stadatosActualiza.setInt(0,CampaniaActualizar.getCmpId());
-           stadatosActualiza.setString(1,CampaniaActualizar.getCmpDescripcion());
-           stadatosActualiza.setInt(2,CampaniaActualizar.getCmpId());
+           stadatosActualiza.setInt(1,CampaniaActualizar.getCmpId());
+           stadatosActualiza.setString(2,CampaniaActualizar.getCmpDescripcion());
+           stadatosActualiza.setInt(3,CampaniaActualizar.getCmpId());
            int resulconsul = stadatosActualiza.executeUpdate();
            //OPCIONAL 
            if (resulconsul > 0) {
@@ -190,7 +190,7 @@ public class CampaniaDAO {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            System.out.println("eliminando");
+            //System.out.println("eliminando");
             String sql = "DELETE FROM campania WHERE campania.cmp_id = "+ Campaniaeliminar+";";
            PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
           

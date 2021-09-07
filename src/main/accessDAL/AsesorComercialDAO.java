@@ -138,11 +138,11 @@ public class AsesorComercialDAO {
             }
             String sql = "UPDATE asesor_comercial SET asr_id = ?, asr_nombres = ?, asr_apellidos = ?, asr_surcusal_bancaria= ? where asr_id = ?; ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
-            stadatos.setInt(0, ActualizarAsesor.getAsrId());
-            stadatos.setString(1, ActualizarAsesor.getAsrNombres());
-            stadatos.setString(2, ActualizarAsesor.getAsrApellidos());
-            stadatos.setString(3, ActualizarAsesor.getAsrSucursalBancaria());
-            stadatos.setInt(4, ActualizarAsesor.getAsrId());
+            stadatos.setInt(1, ActualizarAsesor.getAsrId());
+            stadatos.setString(2, ActualizarAsesor.getAsrNombres());
+            stadatos.setString(3, ActualizarAsesor.getAsrApellidos());
+            stadatos.setString(4, ActualizarAsesor.getAsrSucursalBancaria());
+            stadatos.setInt(5, ActualizarAsesor.getAsrId());
          
             int resulconsul = stadatos.executeUpdate();
             //OPCIONAL 

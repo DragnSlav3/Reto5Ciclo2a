@@ -95,12 +95,12 @@ public class ConsumoDAO {
             }
             String sql = "UPDATE consumo SET csm_idprimary = ? , csm_id = ?, csm_asesor = ?, csm_cuotas = ?, csm_tasa_interes = ? where csm_idprimary = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(0, Actualizarconsumo.getCsmIdPrimary());
-            stadatosActualiza.setInt(1, Actualizarconsumo.getCsmId());
-            stadatosActualiza.setInt(2, Actualizarconsumo.getCsmAsesor());
-            stadatosActualiza.setInt(3, Actualizarconsumo.getCsmCuotas());
-            stadatosActualiza.setFloat(4, Actualizarconsumo.getCsmTasaInteres());
-            stadatosActualiza.setInt(5, Actualizarconsumo.getCsmIdPrimary());
+            stadatosActualiza.setInt(1, Actualizarconsumo.getCsmIdPrimary());
+            stadatosActualiza.setInt(2, Actualizarconsumo.getCsmId());
+            stadatosActualiza.setInt(3, Actualizarconsumo.getCsmAsesor());
+            stadatosActualiza.setInt(4, Actualizarconsumo.getCsmCuotas());
+            stadatosActualiza.setFloat(5, Actualizarconsumo.getCsmTasaInteres());
+            stadatosActualiza.setInt(6, Actualizarconsumo.getCsmIdPrimary());
 
             int resulconsul = stadatosActualiza.executeUpdate();
             //OPCIONAL 

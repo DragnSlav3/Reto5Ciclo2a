@@ -251,6 +251,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnCampaniaEditar.setText("Editar");
+        btnCampaniaEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampaniaEditarActionPerformed(evt);
+            }
+        });
 
         btnCampaniaBorrar.setText("Borrar");
         btnCampaniaBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -311,10 +316,10 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCampaniaAgregar)
                     .addComponent(btnCampaniaEditar)
                     .addComponent(btnCampaniaBorrar)
-                    .addComponent(btnCampaniaCancelar))
+                    .addComponent(btnCampaniaCancelar)
+                    .addComponent(btnCampaniaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaID)
@@ -323,7 +328,7 @@ public class TabbedPane extends javax.swing.JFrame {
                 .addGroup(panelCampaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCampaniaDescripcion)
                     .addComponent(txtCampaniaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 139, Short.MAX_VALUE))
+                .addGap(0, 131, Short.MAX_VALUE))
         );
 
         panelLibranza.addTab("Campaña", panelCampania);
@@ -354,6 +359,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         brnCampaniaAplicadaEditar.setText("Editar");
+        brnCampaniaAplicadaEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnCampaniaAplicadaEditarActionPerformed(evt);
+            }
+        });
 
         brnCampaniaAplicadaBorrar.setText("Borrar");
         brnCampaniaAplicadaBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -363,6 +373,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         brnCampaniaAplicadaCancelar.setText("Cancelar");
+        brnCampaniaAplicadaCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnCampaniaAplicadaCancelarActionPerformed(evt);
+            }
+        });
 
         lblCampaniaAplicadaID.setText("ID:");
 
@@ -463,6 +478,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnConsumoEditar.setText("Editar");
+        btnConsumoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsumoEditarActionPerformed(evt);
+            }
+        });
 
         btnConsumoBorrar.setText("Borrar");
         btnConsumoBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -472,6 +492,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnConsumoCancelar.setText("Cancelar");
+        btnConsumoCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsumoCancelarActionPerformed(evt);
+            }
+        });
 
         lblConsumoIDCa.setText("ID campaña:");
 
@@ -592,6 +617,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnLibranzaEditar.setText("Editar");
+        btnLibranzaEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibranzaEditarActionPerformed(evt);
+            }
+        });
 
         btnLibranzaBorrar.setText("Borrar");
         btnLibranzaBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -601,6 +631,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnLibranzaCancelar.setText("Cancelar");
+        btnLibranzaCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibranzaCancelarActionPerformed(evt);
+            }
+        });
 
         lblLibranzaIDCa.setText("ID campaña:");
 
@@ -711,6 +746,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnUsuarioEditar.setText("Editar");
+        btnUsuarioEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioEditarActionPerformed(evt);
+            }
+        });
 
         btnUsuarioBorrar.setText("Borrar");
         btnUsuarioBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -720,6 +760,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         Cancelar.setText("Cancelar");
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarActionPerformed(evt);
+            }
+        });
 
         lblUsuarioAlias.setText("Alias:");
 
@@ -862,6 +907,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnAsesorEditar.setText("Editar");
+        btnAsesorEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsesorEditarActionPerformed(evt);
+            }
+        });
 
         btnAsesorBorrar.setText("Borrar");
         btnAsesorBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -876,6 +926,11 @@ public class TabbedPane extends javax.swing.JFrame {
         });
 
         btnAsesorCancelar.setText("Cancelar");
+        btnAsesorCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsesorCancelarActionPerformed(evt);
+            }
+        });
 
         lblAsesorID.setText("ID:");
 
@@ -1040,7 +1095,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtCampaniaID.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             txtCampaniaDescripcion.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 1).toString());
             btnCampaniaBorrar.setEnabled(true);
-
+            btnCampaniaEditar.setEnabled(true);
+            btnCampaniaAgregar.setEnabled(false);
         }
 
     }//GEN-LAST:event_tblCampaniaMouseClicked
@@ -1054,6 +1110,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtCampaniaAplicadaAlias.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 5).toString());
             txtCampaniaAplicadaFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
             brnCampaniaAplicadaBorrar.setEnabled(true);
+            brnCampaniaAplicadaAgregar.setEnabled(false);
+            brnCampaniaAplicadaEditar.setEnabled(true);
         }
 
     }//GEN-LAST:event_tblCampaniaAplicadaMouseClicked
@@ -1071,6 +1129,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtConsumoCuotas.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtConsumoTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
             btnConsumoBorrar.setEnabled(true);
+            btnConsumoEditar.setEnabled(true);
+            btnConsumoAgregar.setEnabled(false);
         }
     }//GEN-LAST:event_tblConsumoMouseClicked
 
@@ -1083,6 +1143,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtLibranzaPlazo.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
             txtLibranzaTasa.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 4).toString());
             btnLibranzaBorrar.setEnabled(true);
+            btnLibranzaAgregar.setEnabled(false);
+            btnLibranzaEditar.setEnabled(true);
         }
     }//GEN-LAST:event_tblLibranzaMouseClicked
 
@@ -1098,6 +1160,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtUsuarioFecha.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 6).toString());
             this.usuarioAliasActual = (receptor.getModel().getValueAt(receptor.getSelectedRow(), 0).toString());
             btnUsuarioBorrar.setEnabled(true);
+            btnUsuarioAgregar.setEnabled(false);
+            btnUsuarioEditar.setEnabled(true);
         }
     }//GEN-LAST:event_tblUsuarioMouseClicked
 
@@ -1109,6 +1173,8 @@ public class TabbedPane extends javax.swing.JFrame {
             txtAsesorApellidos.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 2).toString());
             txtAsesorSucursal.setText(receptor.getModel().getValueAt(receptor.getSelectedRow(), 3).toString());
             btnAsesorBorrar.setEnabled(true);
+            btnAsesorAgregar.setEnabled(false);
+            btnAsesorEditar.setEnabled(true);
 
         }
     }//GEN-LAST:event_tblAsesorMouseClicked
@@ -1218,6 +1284,7 @@ public class TabbedPane extends javax.swing.JFrame {
         txtCampaniaID.setText("");
         txtCampaniaDescripcion.setText("");
         btnCampaniaBorrar.setEnabled(false);
+        iniciarVista();
     }//GEN-LAST:event_btnCampaniaCancelarActionPerformed
 
     private void brnCampaniaAplicadaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnCampaniaAplicadaAgregarActionPerformed
@@ -1250,16 +1317,145 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsumoAgregarActionPerformed
 
     private void btnAsesorAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsesorAgregarActionPerformed
-        AsesorComercial asesorComercial = new AsesorComercial(5,txtAsesorNombres.getText(), txtAsesorApellidos.getText(), txtAsesorSucursal.getText());
+        AsesorComercial asesorComercial = new AsesorComercial(5, txtAsesorNombres.getText(), txtAsesorApellidos.getText(), txtAsesorSucursal.getText());
         AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
         asesorComercialDAO.AgregarAsesorcomercial(asesorComercial);
-          iniciarVista();
+        iniciarVista();
         txtAsesorID.setText("");
         txtAsesorApellidos.setText("");
         txtAsesorNombres.setText("");
         txtAsesorSucursal.setText("");
-        
+
     }//GEN-LAST:event_btnAsesorAgregarActionPerformed
+
+    private void btnCampaniaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaEditarActionPerformed
+        Campania campaniaAgre = new Campania(Integer.parseInt(txtCampaniaID.getText()), txtCampaniaDescripcion.getText());
+        CampaniaDAO campaniaDAO = new CampaniaDAO();
+        campaniaDAO.ActualizarCampania(campaniaAgre);
+        iniciarVista();
+        txtCampaniaID.setText("");
+        txtCampaniaDescripcion.setText("");
+    }//GEN-LAST:event_btnCampaniaEditarActionPerformed
+
+    private void brnCampaniaAplicadaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnCampaniaAplicadaEditarActionPerformed
+        CampaniaAplicada campaniaAppAgre = new CampaniaAplicada(Integer.parseInt(txtCampaniaAplicadaID.getText()), txtCampaniaAplicadaAlias.getText(), "", txtCampaniaAplicadaFecha.getText(), Integer.parseInt(txtCampaniaAplicadaCod.getText()), txtCampaniaAplicadaAlias.getText());
+        CampaniasAppDAO campaniasAppDAO = new CampaniasAppDAO();
+        campaniasAppDAO.ActualizarCampaniaApli(campaniaAppAgre);
+        iniciarVista();
+        txtCampaniaAplicadaID.setText("");
+        txtCampaniaAplicadaAlias.setText("");
+        txtCampaniaAplicadaCod.setText("");
+        txtCampaniaAplicadaFecha.setText("");
+    }//GEN-LAST:event_brnCampaniaAplicadaEditarActionPerformed
+
+    private void btnConsumoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumoEditarActionPerformed
+
+        Consumo consumoAgre = new Consumo(Integer.parseInt(txtConsumoID.getText()), Integer.parseInt(txtConsumoIDCa.getText()), Integer.parseInt(txtConsumoCuotas.getText()), (float) Float.parseFloat(txtConsumoTasa.getText()), Integer.parseInt(txtConsumoAsesor.getText()));
+
+        ConsumoDAO consumoDAO = new ConsumoDAO();
+        consumoDAO.ActualizarConsumo(consumoAgre);
+        iniciarVista();
+
+        txtConsumoAsesor.setText("");
+        txtConsumoCuotas.setText("");
+        txtConsumoIDCa.setText("");
+        txtConsumoID.setText("");
+        txtConsumoTasa.setText("");
+    }//GEN-LAST:event_btnConsumoEditarActionPerformed
+
+    private void btnLibranzaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibranzaEditarActionPerformed
+        String tassa = txtLibranzaTasa.getText();
+        Libranza libranzaaAgre = new Libranza(Integer.parseInt(txtLibranzaID.getText()), Integer.parseInt(txtLibranzaIDCa.getText()), " ", txtLibranzaEmpresa.getText(), Integer.parseInt(txtLibranzaPlazo.getText()), (float) Float.parseFloat(tassa));
+        LibranzaDAO libranzaDAO = new LibranzaDAO();
+        libranzaDAO.Actualizarlibranza(libranzaaAgre);
+
+        iniciarVista();
+        txtLibranzaID.setText("");
+        txtLibranzaEmpresa.setText("");
+        txtLibranzaIDCa.setText("");
+        txtLibranzaPlazo.setText("");
+        txtLibranzaTasa.setText("");
+    }//GEN-LAST:event_btnLibranzaEditarActionPerformed
+
+    private void btnUsuarioEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioEditarActionPerformed
+        UsuarioModelBL usuarioModelBL = new UsuarioModelBL(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.ActualizarUsuario(usuarioModelBL, usuarioAliasActual);
+        iniciarVista();
+        txtUsuarioAlias.setText("");
+        txtUsuarioNombres.setText("");
+        txtUsuarioApellidos.setText("");
+        txtUsuarioCelular.setText("");
+        txtUsuarioContrasena.setText("");
+
+        txtUsuarioEmail.setText("");
+        txtUsuarioFecha.setText("");
+    }//GEN-LAST:event_btnUsuarioEditarActionPerformed
+
+    private void btnAsesorEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsesorEditarActionPerformed
+        AsesorComercial asesorComercial = new AsesorComercial(Integer.parseInt(txtAsesorID.getText()), txtAsesorNombres.getText(), txtAsesorApellidos.getText(), txtAsesorSucursal.getText());
+        AsesorComercialDAO asesorComercialDAO = new AsesorComercialDAO();
+        asesorComercialDAO.ActualizarAsesorComercal(asesorComercial);
+        iniciarVista();
+        txtAsesorID.setText("");
+        txtAsesorApellidos.setText("");
+        txtAsesorNombres.setText("");
+        txtAsesorSucursal.setText("");
+    }//GEN-LAST:event_btnAsesorEditarActionPerformed
+
+    private void brnCampaniaAplicadaCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnCampaniaAplicadaCancelarActionPerformed
+        iniciarVista();
+        txtCampaniaAplicadaID.setText("");
+        txtCampaniaAplicadaAlias.setText("");
+        txtCampaniaAplicadaCod.setText("");
+        txtCampaniaAplicadaFecha.setText("");
+        brnCampaniaAplicadaBorrar.setEnabled(false);
+    }//GEN-LAST:event_brnCampaniaAplicadaCancelarActionPerformed
+
+    private void btnConsumoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsumoCancelarActionPerformed
+        iniciarVista();
+        txtConsumoAsesor.setText("");
+        txtConsumoCuotas.setText("");
+        txtConsumoIDCa.setText("");
+        txtConsumoID.setText("");
+        txtConsumoTasa.setText("");
+
+        btnConsumoBorrar.setEnabled(false);
+    }//GEN-LAST:event_btnConsumoCancelarActionPerformed
+
+    private void btnLibranzaCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibranzaCancelarActionPerformed
+        iniciarVista();
+        txtLibranzaID.setText("");
+        txtLibranzaEmpresa.setText("");
+        txtLibranzaIDCa.setText("");
+        txtLibranzaPlazo.setText("");
+        txtLibranzaTasa.setText("");
+
+        btnLibranzaBorrar.setEnabled(false);
+    }//GEN-LAST:event_btnLibranzaCancelarActionPerformed
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+        iniciarVista();
+        txtUsuarioAlias.setText("");
+        txtUsuarioNombres.setText("");
+        txtUsuarioApellidos.setText("");
+        txtUsuarioCelular.setText("");
+        txtUsuarioContrasena.setText("");
+
+        txtUsuarioEmail.setText("");
+        txtUsuarioFecha.setText("");
+
+        btnUsuarioBorrar.setEnabled(false);
+    }//GEN-LAST:event_CancelarActionPerformed
+
+    private void btnAsesorCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsesorCancelarActionPerformed
+       iniciarVista();
+        txtAsesorID.setText("");
+        txtAsesorApellidos.setText("");
+        txtAsesorNombres.setText("");
+        txtAsesorSucursal.setText("");
+        btnAsesorBorrar.setEnabled(false);
+    }//GEN-LAST:event_btnAsesorCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1298,30 +1494,30 @@ public class TabbedPane extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
-    private javax.swing.JButton brnCampaniaAplicadaAgregar;
+    public javax.swing.JButton brnCampaniaAplicadaAgregar;
     public javax.swing.JButton brnCampaniaAplicadaBorrar;
     private javax.swing.JButton brnCampaniaAplicadaCancelar;
-    private javax.swing.JButton brnCampaniaAplicadaEditar;
-    private javax.swing.JButton btnAsesorAgregar;
+    public javax.swing.JButton brnCampaniaAplicadaEditar;
+    public javax.swing.JButton btnAsesorAgregar;
     public javax.swing.JButton btnAsesorBorrar;
     private javax.swing.JButton btnAsesorCancelar;
-    private javax.swing.JButton btnAsesorEditar;
-    private javax.swing.JButton btnCampaniaAgregar;
+    public javax.swing.JButton btnAsesorEditar;
+    public javax.swing.JButton btnCampaniaAgregar;
     public javax.swing.JButton btnCampaniaBorrar;
     private javax.swing.JButton btnCampaniaCancelar;
-    private javax.swing.JButton btnCampaniaEditar;
-    private javax.swing.JButton btnConsumoAgregar;
+    public javax.swing.JButton btnCampaniaEditar;
+    public javax.swing.JButton btnConsumoAgregar;
     public javax.swing.JButton btnConsumoBorrar;
     private javax.swing.JButton btnConsumoCancelar;
-    private javax.swing.JButton btnConsumoEditar;
+    public javax.swing.JButton btnConsumoEditar;
     private javax.swing.JButton btnGeneralActualizar;
-    private javax.swing.JButton btnLibranzaAgregar;
+    public javax.swing.JButton btnLibranzaAgregar;
     public javax.swing.JButton btnLibranzaBorrar;
     private javax.swing.JButton btnLibranzaCancelar;
-    private javax.swing.JButton btnLibranzaEditar;
-    private javax.swing.JButton btnUsuarioAgregar;
+    public javax.swing.JButton btnLibranzaEditar;
+    public javax.swing.JButton btnUsuarioAgregar;
     public javax.swing.JButton btnUsuarioBorrar;
-    private javax.swing.JButton btnUsuarioEditar;
+    public javax.swing.JButton btnUsuarioEditar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
