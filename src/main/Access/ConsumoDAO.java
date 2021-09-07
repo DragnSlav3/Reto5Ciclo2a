@@ -1,5 +1,6 @@
-package main.accessDAL;
+package main.Access;
 
+import main.Model.Consumo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import utils.ConnectionDB;
-import main.modelBL.*;
 
 /**
  *
@@ -120,9 +120,8 @@ public class ConsumoDAO {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            String sql = "DELETE FROM consumo WHERE csm_idprimary = "+eliminarcons+";";
+            String sql = "DELETE FROM consumo WHERE csm_idprimary = " + eliminarcons + ";";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-         
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {

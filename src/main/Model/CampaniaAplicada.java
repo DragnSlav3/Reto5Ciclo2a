@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.modelBL;
-
-import java.util.Vector;
+package main.Model;
 
 /**
  *
@@ -27,7 +20,7 @@ public class CampaniaAplicada {
     /*
     Constructor básico
      */
-    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, int IdcpaCampania,String cpaUsuari_ID) {
+    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, int IdcpaCampania, String cpaUsuari_ID) {
         this.cpaAppId = cpaAppId;
         this.cpaUsuario = cpaUsuario;
         this.CpaCampania = CpaCampania;
@@ -40,7 +33,7 @@ public class CampaniaAplicada {
     /*
     Constructor para Créditos de consumo
      */
-    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, int IdcpaCampania, String nombreAsesor,String cpaUsuari_ID) {
+    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, int IdcpaCampania, String nombreAsesor, String cpaUsuari_ID) {
         this.cpaAppId = cpaAppId;
         this.cpaUsuario = cpaUsuario;
         this.CpaCampania = CpaCampania;
@@ -50,15 +43,15 @@ public class CampaniaAplicada {
         this.cpaUsuari_ID = cpaUsuari_ID;
     }
 
-     public Object[] toArrayconsumo(){
-        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, nombreAsesor ,cpaAppFecha,cpaUsuari_ID, IdcpaCampania};
+    public Object[] toArrayconsumo() {
+        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, nombreAsesor, cpaAppFecha, cpaUsuari_ID, IdcpaCampania};
         return data;
     }
 
     /*
     Constructor para Créditos de Libranza
      */
-    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, String NombreEmpresa, int IdcpaCampania,String cpaUsuari_ID) {
+    public CampaniaAplicada(int cpaAppId, String cpaUsuario, String CpaCampania, String cpaAppFecha, String NombreEmpresa, int IdcpaCampania, String cpaUsuari_ID) {
         this.cpaAppId = cpaAppId;
         this.cpaUsuario = cpaUsuario;
         this.CpaCampania = CpaCampania;
@@ -67,10 +60,12 @@ public class CampaniaAplicada {
         this.IdcpaCampania = IdcpaCampania;
         this.cpaUsuari_ID = cpaUsuari_ID;
     }
- public Object[] toArraylibranza(){
-        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, NombreEmpresa ,cpaAppFecha,cpaUsuari_ID, IdcpaCampania};
+
+    public Object[] toArraylibranza() {
+        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, NombreEmpresa, cpaAppFecha, cpaUsuari_ID, IdcpaCampania};
         return data;
     }
+
     /**
      * @return the cpaAppId
      */
@@ -154,8 +149,9 @@ public class CampaniaAplicada {
     public void setCpaUsuari_ID(String cpaUsuari_ID) {
         this.cpaUsuari_ID = cpaUsuari_ID;
     }
-    public Object[] toArray(){
-        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, cpaAppFecha, IdcpaCampania,cpaUsuari_ID};
+
+    public Object[] toArray() {
+        Object[] data = {cpaAppId, cpaUsuario, CpaCampania, cpaAppFecha, IdcpaCampania, cpaUsuari_ID};
         return data;
     }
 

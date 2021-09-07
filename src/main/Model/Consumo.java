@@ -1,4 +1,4 @@
-package main.modelBL;
+package main.Model;
 
 /**
  *
@@ -35,10 +35,12 @@ public class Consumo {
         this.CmpDescripcion = CmpDescripcion;
         this.AsrNombre = AsrNombre;
     }
- public Object[] toArray() {
-        Object[] data = {CsmIdPrimary, CmpDescripcion, CsmCuotas, CsmTasaInteres, AsrNombre,CsmAsesor,CsmId};
+
+    public Object[] toArray() {
+        Object[] data = {CsmIdPrimary, CmpDescripcion, CsmCuotas, CsmTasaInteres, AsrNombre, CsmAsesor, CsmId};
         return data;
     }
+
     public int getCsmIdPrimary() {
         return CsmIdPrimary;
     }
@@ -78,7 +80,5 @@ public class Consumo {
     public void setCsmAsesor(int CsmAsesor) {
         this.CsmAsesor = CsmAsesor;
     }
-
-   
 
 }

@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.accessDAL;
+package main.Access;
 
-import main.modelBL.UsuarioModelBL;
+import main.Model.Usuario;
 import java.util.ArrayList;
 import utils.ConnectionDB;
 import java.sql.Connection;
@@ -23,8 +18,8 @@ public class UsuarioDAO {
     private Connection conn = null;
 //obtener todos los usuarios
 
-    public ArrayList<UsuarioModelBL> obteneUsuarios() {
-        ArrayList<UsuarioModelBL> usuarios = new ArrayList<UsuarioModelBL>();
+    public ArrayList<Usuario> obteneUsuarios() {
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -33,7 +28,7 @@ public class UsuarioDAO {
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
             while (resultado.next()) {
-                UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
+                Usuario usuario = new Usuario(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                 usuarios.add(usuario);
             }
 
@@ -43,8 +38,8 @@ public class UsuarioDAO {
     }
 
     //obtener un usuario espesifico por el alias
-    public UsuarioModelBL obtenerusUsuario(String usrAlias) {
-        UsuarioModelBL usuario = null;
+    public Usuario obtenerusUsuario(String usrAlias) {
+        Usuario usuario = null;
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -54,7 +49,7 @@ public class UsuarioDAO {
             PreparedStatement consultadatos = conn.prepareStatement(sql);
             consultadatos.setString(1, usrAlias);
             ResultSet resultado = consultadatos.executeQuery();
-            usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
+            usuario = new Usuario(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
 
         } catch (SQLException ex) {
         }
@@ -62,8 +57,8 @@ public class UsuarioDAO {
     }
 
     //obtener usuarios por Nombre o apellido  la variable 1 para nombre o 2 para apellido
-    public ArrayList<UsuarioModelBL> obtenerUsuarios(String consulta, int tipNoA) {
-        ArrayList<UsuarioModelBL> usuarios = new ArrayList<UsuarioModelBL>();
+    public ArrayList<Usuario> obtenerUsuarios(String consulta, int tipNoA) {
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -87,7 +82,7 @@ public class UsuarioDAO {
                 ResultSet resultado = consultadatos.executeQuery();
                 System.out.println(resultado);
                 while (resultado.next()) {
-                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
+                    Usuario usuario = new Usuario(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                     usuarios.add(usuario);
                 }
 
@@ -100,7 +95,7 @@ public class UsuarioDAO {
                 //  consultadatos.setString(0, consulta);
                 ResultSet resultado = consultadatos.executeQuery();
                 while (resultado.next()) {
-                    UsuarioModelBL usuario = new UsuarioModelBL(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
+                    Usuario usuario = new Usuario(resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getString(4), resultado.getString(5), resultado.getString(6), resultado.getString(7));
                     usuarios.add(usuario);
                 }
             }
@@ -109,7 +104,7 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public void AgregarUsuario(UsuarioModelBL usuarioAgregar) {
+    public void AgregarUsuario(Usuario usuarioAgregar) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -137,7 +132,7 @@ public class UsuarioDAO {
         }
     }
 
-    public void ActualizarUsuario(UsuarioModelBL usuarioActualizar, String aliasActual) {
+    public void ActualizarUsuario(Usuario usuarioActualizar, String aliasActual) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();

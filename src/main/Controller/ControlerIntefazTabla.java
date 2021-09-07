@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.Inicialdata;
+package main.Controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import main.Model.AsesorComercial;
+import main.Model.Campania;
+import main.Model.Libranza;
+import main.Model.Usuario;
+import main.Model.Consumo;
+import main.Model.CampaniaAplicada;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-import main.accessDAL.*;
-import main.modelBL.*;
-import main.view.TabbedPane;
+import main.View.TabbedPane;
 
 /**
  *
@@ -104,7 +101,7 @@ public class ControlerIntefazTabla {
 
     }
 
-    public void setTblResultadosUsuario(ArrayList<UsuarioModelBL> usuarioModelBLs) {
+    public void setTblResultadosUsuario(ArrayList<Usuario> usuarioModelBLs) {
         String[] headers = {"Alias", "Nombres", "Apellidos", "Email", "Celular", "Clave", "Fecha de nacimiento"};
         this.tblResultadosUsuaros.removeAll();
         DefaultTableModel tableModel = new DefaultTableModel();

@@ -1,4 +1,4 @@
-package main.modelBL;
+package main.Model;
 
 /**
  *

@@ -1,26 +1,15 @@
 package main;
-import main.Inicialdata.*;
 
-import main.modelBL.*;
-import main.view.*;
+import main.View.TabbedPane;
 
 /**
- *
  * @author Germán García
+ * @author Gabriel Contreras
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         TabbedPane InterfasPane = new TabbedPane();
-    /*
-        ControlerIntefazTabla controv = new ControlerIntefazTabla();
-        controv.iniciarVista();
-       */
-       
         InterfasPane.setVisible(true);
     }
-    
 }

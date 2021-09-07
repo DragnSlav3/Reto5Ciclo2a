@@ -1,11 +1,11 @@
-package main.modelBL;
+package main.Model;
 
 /**
  *
  * @author Germán García
  */
 public class AsesorComercial {
-    
+
     private int AsrId;
     private String AsrNombres;
     private String AsrApellidos;
@@ -49,8 +49,8 @@ public class AsesorComercial {
     public void setAsrApellidos(String AsrApellidos) {
         this.AsrApellidos = AsrApellidos;
     }
-    
-    public Object[] toArray(){
+
+    public Object[] toArray() {
         Object[] data = {AsrId, AsrNombres, AsrApellidos, AsrSucursalBancaria};
         return data;
     }

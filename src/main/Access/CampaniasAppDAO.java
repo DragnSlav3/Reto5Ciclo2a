@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.accessDAL;
+package main.Access;
 
+import main.Model.CampaniaAplicada;
 import java.util.ArrayList;
 import utils.ConnectionDB;
 import java.sql.Connection;
@@ -12,8 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
-import main.modelBL.*;
 
 /**
  *
@@ -25,7 +19,7 @@ public class CampaniasAppDAO {
 
     public ArrayList<CampaniaAplicada> obtenerCampaniasApli(String tipoconsulta) {
         ArrayList<CampaniaAplicada> campaniaAplicada = new ArrayList<CampaniaAplicada>();
-       // System.err.println("hola Camapñas");
+        // System.err.println("hola Camapñas");
         try {
 
             if (conn == null) {
@@ -67,7 +61,7 @@ public class CampaniasAppDAO {
                 }
 
             } else {
-               // System.out.println("holacmpania2");
+                // System.out.println("holacmpania2");
                 sql = "select cpa_app_id , concat(usuario.usr_nombres, concat(\" \", usuario.usr_apellidos)), cmp_descripcion , campania_aplicada.cpa_app_fecha ,\n"
                         + "                        cpa_campania, cpa_usuario\n"
                         + "                        from campania_aplicada\n"

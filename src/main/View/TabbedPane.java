@@ -1,27 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.view;
+package main.View;
 
+import main.Access.AsesorComercialDAO;
+import main.Access.UsuarioDAO;
+import main.Access.CampaniasAppDAO;
+import main.Access.CampaniaDAO;
+import main.Access.LibranzaDAO;
+import main.Access.ConsumoDAO;
 import java.awt.Toolkit;
-import main.accessDAL.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
 import javax.swing.JTable;
-import javax.swing.UIManager;
-import javax.swing.table.DefaultTableModel;
-import main.Inicialdata.ControlerIntefazTabla;
-import main.Inicialdata.InitialData;
-import main.modelBL.AsesorComercial;
-import main.modelBL.Campania;
-import main.modelBL.CampaniaAplicada;
-import main.modelBL.Consumo;
-import main.modelBL.Libranza;
-import main.modelBL.UsuarioModelBL;
-import utils.ConnectionDB;
+import main.Controller.ControlerIntefazTabla;
+import main.Controller.InitialData;
+import main.Model.AsesorComercial;
+import main.Model.Campania;
+import main.Model.CampaniaAplicada;
+import main.Model.Consumo;
+import main.Model.Libranza;
+import main.Model.Usuario;
 
 /**
  *
@@ -168,7 +162,7 @@ public class TabbedPane extends javax.swing.JFrame {
         txtAsesorApellidos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("OnlineBank P5");
+        setTitle("OnlineBank P5 UNAL");
         setIconImage(getIconImage());
         setIconImages(getIconImages());
 
@@ -1108,7 +1102,7 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioNombresActionPerformed
 
     private void btnUsuarioAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioAgregarActionPerformed
-        UsuarioModelBL usuarioModelBL = new UsuarioModelBL(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
+        Usuario usuarioModelBL = new Usuario(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.AgregarUsuario(usuarioModelBL);
         iniciarVista();
@@ -1409,7 +1403,7 @@ public class TabbedPane extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLibranzaEditarActionPerformed
 
     private void btnUsuarioEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioEditarActionPerformed
-        UsuarioModelBL usuarioModelBL = new UsuarioModelBL(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
+        Usuario usuarioModelBL = new Usuario(txtUsuarioAlias.getText(), txtUsuarioNombres.getText(), txtUsuarioApellidos.getText(), txtUsuarioEmail.getText(), txtUsuarioCelular.getText(), txtUsuarioContrasena.getText(), txtUsuarioFecha.getText());
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.ActualizarUsuario(usuarioModelBL, usuarioAliasActual);
         iniciarVista();

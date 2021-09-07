@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.accessDAL;
+package main.Access;
 
+import main.Model.Libranza;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import main.modelBL.*;
 import utils.ConnectionDB;
 
 /**
@@ -43,7 +38,7 @@ public class LibranzaDAO {
         return creditoLibranza;
     }
 
-   public void AgregarLibranza(Libranza AgregarLibranza) {
+    public void AgregarLibranza(Libranza AgregarLibranza) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
@@ -52,9 +47,9 @@ public class LibranzaDAO {
             String sql = "insert  libranza(lbr_id,lbr_empresa,lbr_meses_plazo,lbr_tasa_interes) values (?,?,?,?); ";
             PreparedStatement stadatos = conn.prepareStatement(sql);
             stadatos.setInt(1, AgregarLibranza.getLbrIdCamapania());
-            stadatos.setString(2,AgregarLibranza.getLbrEmpresa());
+            stadatos.setString(2, AgregarLibranza.getLbrEmpresa());
             stadatos.setInt(3, AgregarLibranza.getLbrMesesPlazo());
-            stadatos.setFloat(4,AgregarLibranza.getLbrTasaInteres());
+            stadatos.setFloat(4, AgregarLibranza.getLbrTasaInteres());
 
             int NumerosRowsInserted = stadatos.executeUpdate();
             //opcional
@@ -100,9 +95,8 @@ public class LibranzaDAO {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            String sql = "DELETE FROM libranza WHERE lbr_id_PRIMARY = "+libranza+";";
+            String sql = "DELETE FROM libranza WHERE lbr_id_PRIMARY = " + libranza + ";";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-           
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {

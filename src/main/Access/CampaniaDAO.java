@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package main.accessDAL;
+package main.Access;
 
+import main.Model.Campania;
 import java.util.ArrayList;
-
 import utils.ConnectionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import main.modelBL.*;
 
 /**
  *
@@ -33,7 +27,7 @@ public class CampaniaDAO {
             String sql = "select cmp_id, cmp_descripcion from campania;";
             Statement statdatosconsul = conn.createStatement();
             ResultSet resultado = statdatosconsul.executeQuery(sql);
-           // System.out.println("HOLA");
+            // System.out.println("HOLA");
             while (resultado.next()) {
                 Campania camApp = new Campania(resultado.getInt(1), resultado.getString(2));
                 campania.add(camApp);
@@ -160,52 +154,49 @@ public class CampaniaDAO {
         }
     }
 
-     public void ActualizarCampania(Campania CampaniaActualizar) {
+    public void ActualizarCampania(Campania CampaniaActualizar) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            
-            
-           String sql = "UPDATE campania SET cmp_id = ? , cmp_descripcion = ? WHERE cmp_id = ?;";
-           PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-           stadatosActualiza.setInt(1,CampaniaActualizar.getCmpId());
-           stadatosActualiza.setString(2,CampaniaActualizar.getCmpDescripcion());
-           stadatosActualiza.setInt(3,CampaniaActualizar.getCmpId());
-           int resulconsul = stadatosActualiza.executeUpdate();
-           //OPCIONAL 
-           if (resulconsul > 0) {
+
+            String sql = "UPDATE campania SET cmp_id = ? , cmp_descripcion = ? WHERE cmp_id = ?;";
+            PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
+            stadatosActualiza.setInt(1, CampaniaActualizar.getCmpId());
+            stadatosActualiza.setString(2, CampaniaActualizar.getCmpDescripcion());
+            stadatosActualiza.setInt(3, CampaniaActualizar.getCmpId());
+            int resulconsul = stadatosActualiza.executeUpdate();
+            //OPCIONAL 
+            if (resulconsul > 0) {
                 System.out.println("Actualizacion exitosa " + resulconsul);
             } else {
                 System.out.println("No se pudo Actuaizar los datos ");
             }
-           
+
         } catch (SQLException ex) {
         }
 
     }
-     
-     public void EliminarCampania(int Campaniaeliminar) {
+
+    public void EliminarCampania(int Campaniaeliminar) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
             //System.out.println("eliminando");
-            String sql = "DELETE FROM campania WHERE campania.cmp_id = "+ Campaniaeliminar+";";
-           PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-          
-         
-           int resulconsul = stadatosActualiza.executeUpdate();
-           if (resulconsul > 0) {
+            String sql = "DELETE FROM campania WHERE campania.cmp_id = " + Campaniaeliminar + ";";
+            PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
+
+            int resulconsul = stadatosActualiza.executeUpdate();
+            if (resulconsul > 0) {
                 System.out.println("Se elimino el registro exitosamente " + resulconsul);
             } else {
                 System.out.println("No se pudo eliminar el registro");
             }
-           
+
         } catch (SQLException ex) {
         }
 
     }
-     
-    
+
 }

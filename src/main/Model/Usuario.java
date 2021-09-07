@@ -1,10 +1,10 @@
-package main.modelBL;
+package main.Model;
 
 /**
  *
  * @author Germán García
  */
-public class UsuarioModelBL {
+public class Usuario {
 
     private String usrAlias;
     private String usrNombres;
@@ -18,7 +18,7 @@ public class UsuarioModelBL {
     /*
     Constructor básico
     */
-    public UsuarioModelBL(String usrAlias, String usrNombres, String usrApellidos) {
+    public Usuario(String usrAlias, String usrNombres, String usrApellidos) {
         this.usrAlias = usrAlias;
         this.usrNombres = usrNombres;
         this.usrApellidos = usrApellidos;
@@ -28,7 +28,7 @@ public class UsuarioModelBL {
     Constructor completo
     */
 
-    public UsuarioModelBL(String usrAlias, String usrNombres, String usrApellidos, String usrEmail, String usrCelular, String usrClave, String usrFechaNto) {
+    public Usuario(String usrAlias, String usrNombres, String usrApellidos, String usrEmail, String usrCelular, String usrClave, String usrFechaNto) {
         this.usrAlias = usrAlias;
         this.usrNombres = usrNombres;
         this.usrApellidos = usrApellidos;
