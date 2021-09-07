@@ -68,19 +68,19 @@ public class LibranzaDAO {
         }
     }
 
-    public void ActualizarConsumo(Consumo Actualizarconsumo) {
+    public void Actualizarlibranza(Libranza ActualizarLibranza) {
         try {
             if (conn == null) {
                 conn = ConnectionDB.getConnection();
             }
-            String sql = "UPDATE consumo SET csm_idprimary = ? , csm_id = ?, csm_asesor = ?, csm_cuotas = ?, csm_tasa_interes = ? where csm_idprimary = ?;";
+            String sql = "UPDATE libranza SET lbr_id_PRIMARY = ?, lbr_id = ?, lbr_empresa = ?, lbr_meses_plazo = ?, lbr_tasa_interes = ? WHERE lbr_id_PRIMARY = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(1, Actualizarconsumo.getCsmIdPrimary());
-            stadatosActualiza.setInt(2, Actualizarconsumo.getCsmId());
-            stadatosActualiza.setInt(3, Actualizarconsumo.getCsmAsesor());
-            stadatosActualiza.setInt(4, Actualizarconsumo.getCsmCuotas());
-            stadatosActualiza.setFloat(5, Actualizarconsumo.getCsmTasaInteres());
-            stadatosActualiza.setInt(6, Actualizarconsumo.getCsmIdPrimary());
+            stadatosActualiza.setInt(1, ActualizarLibranza.getLbrIdPRIMARY());
+            stadatosActualiza.setInt(2, ActualizarLibranza.getLbrIdCamapania());
+            stadatosActualiza.setString(3, ActualizarLibranza.getLbrEmpresa());
+            stadatosActualiza.setInt(4, ActualizarLibranza.getLbrMesesPlazo());
+            stadatosActualiza.setFloat(5, ActualizarLibranza.getLbrTasaInteres());
+            stadatosActualiza.setInt(6, ActualizarLibranza.getLbrIdPRIMARY());
 
             int resulconsul = stadatosActualiza.executeUpdate();
             //OPCIONAL 
