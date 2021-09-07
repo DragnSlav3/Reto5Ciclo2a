@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import main.modelBL.*;
+
 /**
  *
  * @author COMPUMAX
@@ -24,7 +25,7 @@ public class CampaniasAppDAO {
 
     public ArrayList<CampaniaAplicada> obtenerCampaniasApli(String tipoconsulta) {
         ArrayList<CampaniaAplicada> campaniaAplicada = new ArrayList<CampaniaAplicada>();
-        System.err.println("hola Camapñas");
+       // System.err.println("hola Camapñas");
         try {
 
             if (conn == null) {
@@ -66,13 +67,13 @@ public class CampaniasAppDAO {
                 }
 
             } else {
-                System.out.println("holacmpania2");
-                sql = "select cpa_app_id , concat(usuario.usr_nombres, concat(\" \", usuario.usr_apellidos)), cmp_descripcion , campania_aplicada.cpa_app_fecha ,\n" +
-"                        cpa_campania, cpa_usuario\n" +
-"                        from campania_aplicada\n" +
-"                        join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n" +
-"                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id order by cpa_app_id;\n" +
-"                        ";
+               // System.out.println("holacmpania2");
+                sql = "select cpa_app_id , concat(usuario.usr_nombres, concat(\" \", usuario.usr_apellidos)), cmp_descripcion , campania_aplicada.cpa_app_fecha ,\n"
+                        + "                        cpa_campania, cpa_usuario\n"
+                        + "                        from campania_aplicada\n"
+                        + "                        join usuario on campania_aplicada.cpa_usuario = usuario.usr_alias\n"
+                        + "                        join  campania on campania_aplicada.cpa_campania = campania.cmp_id order by cpa_app_id;\n"
+                        + "                        ";
                 Statement statdatosconsul = conn.createStatement();
                 ResultSet resultado = statdatosconsul.executeQuery(sql);
                 while (resultado.next()) {
@@ -136,12 +137,13 @@ public class CampaniasAppDAO {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "UPDATE campania_aplicada SET cpa_app_id = ?, cpa_usuario = ?, cpa_campania = ?,cpa_app_fecha = ?, where cpa_app_id = ?;";
+            String sql = "UPDATE campania_aplicada SET cpa_app_id = ?, cpa_usuario = ?, cpa_campania = ?,cpa_app_fecha = ? where cpa_app_id = ?;";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-            stadatosActualiza.setInt(0, CampaniaActualizar.getCpaAppId());
-            stadatosActualiza.setString(1, CampaniaActualizar.getCpaUsuari_ID());
-            stadatosActualiza.setInt(2, CampaniaActualizar.getIdcpaCampania());
-            stadatosActualiza.setString(3, CampaniaActualizar.getCpaAppFecha());
+            stadatosActualiza.setInt(1, CampaniaActualizar.getCpaAppId());
+            stadatosActualiza.setString(2, CampaniaActualizar.getCpaUsuari_ID());
+            stadatosActualiza.setInt(3, CampaniaActualizar.getIdcpaCampania());
+            stadatosActualiza.setString(4, CampaniaActualizar.getCpaAppFecha());
+            stadatosActualiza.setInt(5, CampaniaActualizar.getCpaAppId());
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {
                 System.out.println("Actualizacion exitosa " + resulconsul);
@@ -160,9 +162,9 @@ public class CampaniasAppDAO {
                 conn = ConnectionDB.getConnection();
             }
 
-            String sql = "DELETE FROM campania_aplicada WHERE campania_aplicada.cpa_app_id = "+Campaniaeliminar+";";
+            String sql = "DELETE FROM campania_aplicada WHERE campania_aplicada.cpa_app_id = " + Campaniaeliminar + ";";
             PreparedStatement stadatosActualiza = conn.prepareStatement(sql);
-           // stadatosActualiza.setInt(0, Campaniaeliminar);
+            // stadatosActualiza.setInt(0, Campaniaeliminar);
 
             int resulconsul = stadatosActualiza.executeUpdate();
             if (resulconsul > 0) {
