@@ -70,7 +70,7 @@ public class ControlerIntefazTabla {
         this.tblResultadoGeneral2 = interfaz.tblGeneral2;
 
         InitialData initialData = new InitialData();
-
+        //inicalizamos las tablas de la interfaz
         this.setTblResultadosGeneral2(initialData.getConsultaLibranza());
         this.setTblResultadosGeneral(initialData.getConsultaConsumo());
         this.setTblResultadosConsumo(initialData.getConsumos());
@@ -79,7 +79,7 @@ public class ControlerIntefazTabla {
         this.setTblResultadosUsuario(initialData.getUsuarios());
         this.setTblResultadosAsesor(initialData.getAsesores());
         this.setTblResultadoslibranza(initialData.getLibranzas());
-
+        //el control de los botones de la interfas
         interfaz.btnCampaniaBorrar.setEnabled(false);
         interfaz.brnCampaniaAplicadaBorrar.setEnabled(false);
         interfaz.btnConsumoBorrar.setEnabled(false);
@@ -100,7 +100,7 @@ public class ControlerIntefazTabla {
         interfaz.btnAsesorEditar.setEnabled(false);
 
     }
-
+    //llenado de todsa las tablas con la informacion equeridad 
     public void setTblResultadosUsuario(ArrayList<Usuario> usuarioModelBLs) {
         String[] headers = {"Alias", "Nombres", "Apellidos", "Email", "Celular", "Clave", "Fecha de nacimiento"};
         this.tblResultadosUsuaros.removeAll();

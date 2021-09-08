@@ -1065,7 +1065,7 @@ public class TabbedPane extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //eventos de clic en tablas o botones
     private void btnCampaniaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampaniaAgregarActionPerformed
         Campania campaniaAgre = new Campania(0, txtCampaniaDescripcion.getText());
         CampaniaDAO campaniaDAO = new CampaniaDAO();
