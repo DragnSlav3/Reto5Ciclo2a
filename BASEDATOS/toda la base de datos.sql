@@ -1,7 +1,7 @@
 CREATE SCHEMA banco_online;
 USE banco_online;
 CREATE TABLE campania(
-	cmp_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+	cmp_id INTEGER  AUTO_INCREMENT PRIMARY KEY,
 	cmp_descripcion VARCHAR(100)
 );
 INSERT INTO campania (cmp_id, cmp_descripcion) VALUES (1 , "Toma tú crédito de consumo al 0.72% mensual y compra lo que quieras");
@@ -34,7 +34,7 @@ CREATE TABLE usuario(
     usr_nombres VARCHAR(30),
     usr_apellidos VARCHAR(30),
 	usr_email VARCHAR(30),
-    usr_celular DOUBLE,
+    usr_celular VARCHAR(15),
     usr_clave VARCHAR(30),
     usr_fecha_nto VARCHAR(15)
 );
@@ -61,7 +61,7 @@ INSERT INTO consumo(csm_idprimary, csm_id, csm_asesor, csm_cuotas, csm_tasa_inte
 INSERT INTO consumo(csm_idprimary, csm_id, csm_asesor, csm_cuotas, csm_tasa_interes) VALUES (4, 4, 4, 60, 0.90);
 INSERT INTO consumo(csm_idprimary, csm_id, csm_asesor, csm_cuotas, csm_tasa_interes) VALUES (5, 5, 5, 60, 0.70);
 CREATE TABLE libranza(
-	lbr_id_PRIMARY INTEGER AUTO_INCREMENT PRIMARY KEY,
+	lbr_id_PRIMARY INTEGER  AUTO_INCREMENT PRIMARY KEY,
     lbr_id INTEGER NOT NULL,
     lbr_empresa VARCHAR(30),
     lbr_meses_plazo INTEGER,
